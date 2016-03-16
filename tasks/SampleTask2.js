@@ -9,5 +9,5 @@ SampleTask2 = new function() {
 
 	this.check = function() {
 		Helpers.hasStyle("background")
-	}
+	}	
 }
