@@ -1,0 +1,5 @@
+# File: _config.yml
+
+webrick:
+  headers:
+    "Access-Control-Allow-Origin": "*"

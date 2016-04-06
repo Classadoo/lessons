@@ -1,0 +1,1 @@
+webpack --config lib/webpack.config.js --output-path lib/dev --watch & ./www.rb

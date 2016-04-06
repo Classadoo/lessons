@@ -1,0 +1,1 @@
+webpack -p --config lib/webpack.config.js --output-path lib/prod
