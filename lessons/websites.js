@@ -1,6 +1,5 @@
 require("../tasks/CreateAHouse.js");
 require("../tasks/ScratchpadWriteGoogle.js");
-require("../tasks/SDivWithinDiv.js");
 
 __importedLesson = [
 	// ScratchpadWriteGoogle,	
@@ -8,5 +7,11 @@ __importedLesson = [
 	AddRoom,
 	AddTwoMoreRooms,
 	AddFurniture,
-	SDivWithinDiv,	
+	GoogleDiv,
+	GoogleDivWithinDiv,
+	SearchDiv,
+	FeelingLuckyDiv,
+	StyleGoogleHor,
+	StyleGoogleVert,
+	StyleGoogleFont
 ]
