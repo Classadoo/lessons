@@ -41,7 +41,7 @@ AddFurniture = new function() {
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
 		var roomsWithChildren = i.$("room").filter(function(i, el) {
-			return $(el).children().length > 0
+			return$(el).children().length > 0
 		})
 
 		return roomsWithChildren.length > 2
