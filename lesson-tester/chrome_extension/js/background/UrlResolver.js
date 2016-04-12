@@ -20,6 +20,7 @@ UrlResolver = function(siteInfo, tabId, fileSystemBase){
     var processedStyleSheets    = {};
     var originalToAwsUrlMap     = {};
 
+    var fileId                  = siteInfo.fileId
     var baseURI                 = siteInfo.baseUri;
     var currentLocation         = siteInfo.currentLocation;
     var unprocessedHtml         = siteInfo.html
@@ -28,8 +29,7 @@ UrlResolver = function(siteInfo, tabId, fileSystemBase){
     var htmlAttributes          = siteInfo.htmlAttributes;    
     var tabId                   = tabId;    
 
-    this.resolve = function() {
-        console.log("styles shets", stylesheetHrefs);
+    this.resolve = function() {        
         $.each(stylesheetHrefs, function(i,href){
             getCssAndParse(href)
         })
@@ -92,28 +92,7 @@ UrlResolver = function(siteInfo, tabId, fileSystemBase){
                 iframe.innerHTML = "";
                 iframe.setAttribute("src", generateAwsUrl(src).fullUrl);
             }
-        })
-
-        $html.find("iframe:not([src])").each(function(i, iframe){                        
-            if (iframe.contentWindow) {                
-                var $iframe = $(iframe);            
-                var id = "classadoo-test-" + i
-                $iframe.attr("id", id);
-                var manager = new IframeManager($iframe);
-                var content = manager.$("html")[0].outerHTML;
-
-                function addContentToIframe() { 
-                    document.getElementById(" id ").contentDocument.write(" content ");
-                }
-
-                var funString = addContentToIframe.toString.replace(" id ", id).replace(" content ", Util.escape(content)) + "()"
-                var script = document.createElement('script');
-                var code = document.createTextNode(funString);
-                script.appendChild(code);
-                console.log("appending script", script);
-                $iframe.after(script);                        
-            }                        
-        })
+        })       
 
         $html.find("[style]").each(function(i,element){
             var css = element.getAttribute("style");
@@ -161,7 +140,6 @@ UrlResolver = function(siteInfo, tabId, fileSystemBase){
         });
 
         if (resourceLocation != "") {
-            console.log("resour", resourceLocation);            
             resourceLocation = URI(resourceLocation).absoluteTo(baseURI).href();
         }
 
@@ -190,13 +168,12 @@ UrlResolver = function(siteInfo, tabId, fileSystemBase){
     }
 
     function checkIfAllResourcesAreParsed(){
-        if ((styleSheetsLeft == 0) && processedHtml){
-            console.log("sending seti data!");
-
+        if ((styleSheetsLeft == 0) && processedHtml){            
             Requests.sendSiteData({
                 fileSystemBase: fileSystemBase,
                 html: processedHtml,
                 isIframe: isIframe,
+                fileId: fileId,
                 processedStylesheets: processedStyleSheets,
                 originalToAwsUrlMap: originalToAwsUrlMap,              
             })

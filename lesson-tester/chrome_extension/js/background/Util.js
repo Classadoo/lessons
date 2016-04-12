@@ -1,3 +1,5 @@
+var $ = require("jquery")
+
 Util = new function() {
   var counter = 0;
 

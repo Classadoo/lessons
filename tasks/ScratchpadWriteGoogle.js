@@ -1,4 +1,6 @@
 var H = require("../helpers/TaskHelpers.js");
+var IframeManager = require("../helpers/IframeManager.js");
+var $ = require("jquery")
 
 GoogleDiv = new function() {	
 	this.description = 'Make a div with the word "Google" in it'
@@ -53,6 +55,7 @@ StyleGoogleHor = new function() {
 		var i = new IframeManager($("#preview"));				
 
 		var match = i.$(":contains(Google)").filter(function(i, el){												
+			console.log("ekek", $(el).css("left"));
 			return Number($(el).css("left").slice(0,3)) > 200
 		})
 		

@@ -1,4 +1,6 @@
 var H = require("../helpers/TaskHelpers.js");
+var IframeManager = require("../helpers/IframeManager.js");
+var $ = require("jquery")
 
 CreateHouse = new function() {	
 	this.description = 'Starting by creating an empty house using HTML',
@@ -6,7 +8,8 @@ CreateHouse = new function() {
 	this.location = "scratchpad\.io"
 	
 	this.check = function() {			
-		var i = new IframeManager($("#preview"));				
+		var i = new IframeManager($("#preview"));
+		console.log(i.getIDoc());
 		return i.$("house").length > 0
 	}	
 }

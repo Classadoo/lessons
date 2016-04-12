@@ -1,3 +1,5 @@
+var $ = require("jquery")
+
 module.exports = new function() {	
 	this.flash = function(elements, numberOfCycles, callback) {
 		numberOfCycles = numberOfCycles || 2

@@ -1,6 +1,6 @@
 var showingCurrentId = true;
 var idToSave = 0
-var testFileDir = "/Users/dgaynor/classadoo-lessons/lesson-tester/public/test_files/"
+var testFileDir = "../../test_resources"
 
 while (!chrome.runtime.getPlatformInfo) {
   // just putting this in here to make sure everything is ready before moving on    
@@ -8,24 +8,27 @@ while (!chrome.runtime.getPlatformInfo) {
 
 console.log("adding the listener");
 chrome.runtime.onMessage.addListener(
-   function(request, sender, sendResponse) {
-   		console.log("got reequsetssts");
+   function(request, sender, sendResponse) {   		
 		if (request.resolveUrls) {
 		   console.log("resolving urls")
-		   var resolver = new UrlResolver(request.resolveUrls, sender.tab.id, testFileDir + idToSave);
+		   var resolver = new UrlResolver($.extend(request.resolveUrls, {fileId: idToSave}), sender.tab.id, testFileDir);
 		   resolver.resolve();
 
-		   if (!request.resolveUrls.iframe){
-		       console.log("sending message to iframes")
-		       chrome.tabs.sendRequest(sender.tab.id, { resolveIframeUrls: request.resolveUrls});
-		   } else {
-		       console.log("message sent to iframes, now getting parse requests from all iframes");
+		   if (!showingCurrentId) {		   		
+		   		idToSave = idToSave + 1
+		   		updateFileId()
 		   }
 		}
    }
 );
 
 chrome.browserAction.onClicked.addListener(toggleIdDisplay);
+
+function updateFileId() {
+	chrome.browserAction.setBadgeText({
+		text: String(idToSave)
+	})
+}
 
 function toggleIdDisplay() {	
 	Requests.getNextId(testFileDir).then(function(resp) {
@@ -45,8 +48,6 @@ function toggleIdDisplay() {
 			showingCurrentId = true;	
 		}
 
-		chrome.browserAction.setBadgeText({
-			text: String(idToSave)
-		})
+		updateFileId()
 	})	
 }

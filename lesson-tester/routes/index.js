@@ -5,31 +5,32 @@ var request = require('request');
 var url = require('url');
 var path = require('path');
 var mkdirp = require('mkdirp');
+var testDir = "/Users/dgaynor/classadoo-lessons/tests/test_files/"
+var lessonName = "websites"
+var testFileBase = testDir + lessonName;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/next_test_id', function(req, res, next) {
-	var dir = req.query.dir	
-	var pathToRead = path.join(__dirname, dir);
+router.get('/next_test_id', function(req, res, next) {	
+	mkdirp(testFileBase, function (err) {
+		var currentDirectoryIds = fs.readdirSync(testFileBase).map(function(file) {
+			var name = file.split(".")[0];
+			return Number(name)
+		})
 
-	console.log("path to rea", pathToRead);	
-	var currentDirectories = fs.readdirSync(pathToRead).filter(function(file) {
-		console.log("filtuereinging", file);
-	   return fs.statSync(path.join(pathToRead, file)).isDirectory() && Number(file);
-	 })
+		console.log("curent", currentDirectoryIds);
+		currentDirectoryIds.sort()
 
+		var previousId = currentDirectoryIds[currentDirectoryIds.length - 1]
+		if (previousId === undefined) previousId = -1
 
+		console.log(previousId);
 
-	var currentDirectoryIds = currentDirectories.map(function(file) {
-		return Number(file)
-	})
-
-	var previousId = currentDirectoryIds[currentDirectoryIds.length - 1] || -1
-
-	res.send({id: previousId + 1}, 200);
+		res.send({id: previousId + 1}, 200);	
+	})			
 })
 
 router.post('/resource_downloader', function(req, res, next) {
@@ -43,8 +44,9 @@ router.post('/resource_downloader', function(req, res, next) {
 ResourceHandler = function(req) {      
 	var resources = req.body.originalToAwsUrlMap || [];
 	var stylesheets= req.body.processedStylesheets || [];	
+	var fileId = req.body.fileId;
 	var html = req.body.html;		
-	var archivePath = html.awsPath;		
+	var archivePath = html.awsPath;	
 
 	console.log("stylesheets", stylesheets);
 
@@ -66,7 +68,7 @@ ResourceHandler = function(req) {
 
 		request(requestOptions, function(error, response, body) {		
 			if (!error && response.statusCode == 200) {
-				writeFile(mirrorPath, body)                  
+				writeFile(archiveBase, mirrorPath, body)                  
 				callbackTracker.markResourceAsSaved();                
 			} else {
 				console.log("error downloading from: " + resourceUrl);
@@ -77,9 +79,9 @@ ResourceHandler = function(req) {
 		})
 	}
 
-	function writeFile(filePath, data) {
-		var writePath = path.join(archiveBase, filePath);
-		console.log(filePath, archiveBase, writePath)
+	function writeFile(base, filePath, data) {		
+		var writePath = path.join(base, filePath);
+		console.log(filePath, base, writePath)
 
 
 		mkdirp(path.dirname(writePath), function (err) {
@@ -88,7 +90,7 @@ ResourceHandler = function(req) {
 	}     
 
 	for ( var filePath in stylesheets ) {          
-		writeFile(filePath, stylesheets[filePath])          
+		writeFile(archiveBase, filePath, stylesheets[filePath])          
 		callbackTracker.markStylesheetAsSaved();          
 	}
 
@@ -97,7 +99,7 @@ ResourceHandler = function(req) {
 	}
 
 	callbackTracker.setSaveHtmlFunction(function() {
-		writeFile(archivePath + ".html", html.html)            		
+		writeFile(testFileBase, fileId + ".html", html.html)            		
 	})
 }
 

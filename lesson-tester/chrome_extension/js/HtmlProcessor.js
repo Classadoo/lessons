@@ -8,8 +8,6 @@ var HtmlProcessor = function(siteInfo) {
         var stylesheetContents = [];
         var htmlAttributes = {};        
 
-        console.log("site info is", siteInfo);
-
         var realHtmlAttributes = document.querySelector("html").attributes
 
         for (var attr, i = 0, attrs = realHtmlAttributes, l = attrs.length; i<l; i++){
@@ -55,11 +53,18 @@ var HtmlProcessor = function(siteInfo) {
         removeNodes(htmlClone.querySelectorAll("meta"));
     }   
 
+    function stripIframeSrc(htmlClone) {
+        $(document).find("iframe[src]").each(function(i, iframe){
+            iframe.removeAttribute("src");
+        })
+    }
+
     function getCurrentSiteHtml(){
-        var fillerScripts = getIframeFillerScripts();        
-        var htmlElement = document.querySelector('html');
+        var fillerScripts = getIframeFillerScripts();                
+        var htmlElement = document.querySelector('html');        
         var htmlClone = htmlElement.cloneNode(true);
         removeAllUnusedTags(htmlClone);
+        stripIframeSrc(htmlClone)
         fillerScripts.each(function(i, script) {
             $(htmlClone).find("body").append(script);
         })        
@@ -77,14 +82,27 @@ var HtmlProcessor = function(siteInfo) {
                 var content = manager.$("html")[0].outerHTML;
 
                 function addContentToIframe() { 
-                    document.querySelector('[data-test-id=" id "').contentDocument.write(" content ");
+                    if (typeof classadooIframesLoading === 'undefined') {
+                        classadooIframesLoading = [true];
+                    } else {
+                        classadooIframesLoading.push(true);
+                    }
+
+                    var iframe = document.querySelector('[data-test-id=" id "]')
+                    iframe.onload = function() {
+                        var iDoc = iframe.contentWindow.document
+                        iDoc.open();
+                        iDoc.writeln(" content ");
+                        iDoc.close();     
+                        classadooIframesLoading.pop();                   
+                    }
+                    iframe.src = 'about:blank';   
                 }
 
                 var funString = addContentToIframe.toString().replace(" id ", id).replace(" content ", Util.escape(content))                
                 var script = document.createElement('script');
                 var code = document.createTextNode("(" + funString + ")()");
-                script.appendChild(code);
-                console.log("appending script", script);
+                script.appendChild(code);                
                 return script
             }                        
         })
