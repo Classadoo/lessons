@@ -9,6 +9,10 @@ var testDir = "/Users/dgaynor/classadoo-lessons/tests/test_files/"
 var lessonName = "websites"
 var testFileBase = testDir + lessonName;
 
+function sortNumber(a,b) {
+    return a - b;
+}
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -18,16 +22,14 @@ router.get('/next_test_id', function(req, res, next) {
 	mkdirp(testFileBase, function (err) {
 		var currentDirectoryIds = fs.readdirSync(testFileBase).map(function(file) {
 			var name = file.split(".")[0];
+			console.log("name", name);
 			return Number(name)
 		})
 
-		console.log("curent", currentDirectoryIds);
-		currentDirectoryIds.sort()
+		var sorted = currentDirectoryIds.sort(sortNumber)		
 
-		var previousId = currentDirectoryIds[currentDirectoryIds.length - 1]
+		var previousId = sorted[sorted.length - 1]
 		if (previousId === undefined) previousId = -1
-
-		console.log(previousId);
 
 		res.send({id: previousId + 1}, 200);	
 	})			

@@ -86,13 +86,13 @@ function success(result) {
 
 	results[testIndex] = result		    	
 	testIndex = testIndex + 1;
-	checkLoop();
+	setTimeout(checkLoop, 50);
 }
 
 function fail(message) {	
 	results[testIndex] = ["Error", "Error", message];
 	testIndex = testIndex + 1;
-	checkLoop();
+	setTimeout(checkLoop, 50);
 }
 
 checkLoop();

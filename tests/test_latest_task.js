@@ -1,4 +1,5 @@
 var page = require('webpage').create();
+var system = require('system');
 
 // only logs if there's a change
 var lastLog;
@@ -10,7 +11,7 @@ function smartLog(log1, log2) {
 	}	
 }
 
-page.onConsoleMessage = function(msg) {
+page.onConsoleMessage = function(msg) {	
   smartLog(msg);
 }
 
@@ -58,20 +59,20 @@ function testLoop() {
 
 	page.open(filePath, catchE(function(status) {				
 		if (status != "success") {
-			smartLog("test html does not exist!", status)
+			smartLog("test html does not exist!", filePath, status)
 		} else {
 			if(!page.injectJs('lib/dev/websites.js')) {
 				smartLog("injection FAILED");
 			}	
 
-			var result = page.evaluate(function() {  			
+			var result = page.evaluate(function() {				
 				var testIndex = __importedLesson.length - 1
 				var currentTask = __importedLesson[testIndex];
-				var locationResult = RegExp(currentTask.location).test(testlocationHref)			
-				var checkResult = currentTask.check()	
-		    	return [checkResult, locationResult, testIndex]
+				var locationResult = RegExp(currentTask.location).test(testlocationHref)							
+				var checkResult = currentTask.check()					
+		    	return [checkResult || false, locationResult, testIndex]
 		    })
-		    		    
+
 		    testIndex = result[2];
 		    smartLog("RESULT", result.slice(0,2));	
 		}		

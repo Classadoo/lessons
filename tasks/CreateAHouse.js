@@ -26,7 +26,7 @@ AddRoom = new function() {
 }
 
 AddTwoMoreRooms = new function() {	
-	this.description = 'Great, now put two more rooms in.',
+	this.description = 'Great, now put two more rooms in, next to your last room.',
 	this.hint = "Make the rooms in the same way you made the last room, and add them underneath that one."
 	this.location = "scratchpad\.io"
 	

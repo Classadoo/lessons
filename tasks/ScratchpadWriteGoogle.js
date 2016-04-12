@@ -25,13 +25,13 @@ GoogleDivWithinDiv = new function() {
 }
 
 SearchDiv = new function() {	
-	this.description = 'Now make a div containing the word "search". This will later become our search button',
+	this.description = 'Now make a div containing the word "Search". This will later become our search button',
 	this.hint = "remember you'll need to start the div with <div> and end it with </div>"
 	this.location = "scratchpad.io"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
-		return i.$(":contains(search)").length > 0
+		return i.$(":contains(Search)").length > 0
 	}	
 }
 
@@ -109,4 +109,62 @@ StyleGoogleFont = new function() {
 		
 		return match.length > 0
 	}	
+}
+
+MoveSearch = new function() {	
+	this.description = 'Cool, now let\'s put the Search button in the right place. Move it to the center, and below "Google"',
+	this.hint = "use 'style'"
+	this.location = "scratchpad.io"
+	
+	this.check = function() {			
+		var i = new IframeManager($("#preview"));				
+		var googleTop = elThatContains(i, "Google").position().top			
+		var match = i.$(":contains(Search)").filter(function(i, el){																		
+			var top = $(el).position().top;
+			var left = $(el).position().left;			
+
+			return left > 200 && top > googleTop 			
+		})
+		
+		return match.length > 0
+	}	
+}
+
+MoveLucky = new function() {	
+	this.description = 'Finally, let\'s put the "I\'m feeling lucky" in the right place. Move it below "Google" and to the right of the search button.',
+	this.hint = "use 'style'"
+	this.location = "scratchpad.io"
+	
+	this.check = function() {			
+		var i = new IframeManager($("#preview"));				
+		var googleTop =  elThatContains(i, "Google").position().top
+		var searchLeft =  elThatContains(i, "Search").position().left
+
+		var match = i.$(":contains(I\'m Feeling Lucky)").filter(function(i, el){																		
+			var top = $(el).position().top;
+			var left = $(el).position().left;			
+
+			return left > searchLeft && top > googleTop 			
+		})
+		
+		return match.length > 0
+	}	
+}
+
+ButtonBorders = new function() {	
+	this.description = 'Bonus Challenge: let\'s try draw a box around our "Search" and "I\'m feeling lucky" buttons. To learn what property to use try googling "html border property"',
+	this.hint = "use 'style'"
+	this.location = "scratchpad.io"
+	
+	this.check = function() {			
+		var i = new IframeManager($("#preview"));						
+		var searchBorder = elThatContains(i, "Search").css("border-style")
+		var luckyBorder = elThatContains(i, "I\'m Feeling Lucky").css("border-style");		
+
+		return !!(searchBorder !== "none" && luckyBorder !== "none")
+	}	
+}
+
+function elThatContains(i, contains) {
+	return i.$(":contains(" + contains + "):not(:has(*))")
 }

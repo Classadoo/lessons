@@ -12,5 +12,8 @@ __importedLesson = [
 	FeelingLuckyDiv,
 	StyleGoogleHor,
 	StyleGoogleVert,
-	StyleGoogleFont
+	StyleGoogleFont,
+	MoveSearch,
+	MoveLucky,
+	ButtonBorders
 ]

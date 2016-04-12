@@ -1,3 +1,4 @@
 ./build.sh
-git commit --amend --no-edit
+git checkout gh-pages
+git commit -a --amend --no-edit
 git push origin gh-pages
