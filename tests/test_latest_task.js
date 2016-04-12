@@ -1,0 +1,83 @@
+var page = require('webpage').create();
+
+// only logs if there's a change
+var lastLog;
+function smartLog(log1, log2) {	
+	var aggLog = log1 + log2
+	if (lastLog !== aggLog) { 
+		console.log(log1, log2)
+		lastLog = aggLog
+	}	
+}
+
+page.onConsoleMessage = function(msg) {
+  smartLog(msg);
+}
+
+page.onError = function(msg, trace) {	
+	var msgStack = ['PHANTOM ERROR: ' + msg];
+	if (trace && trace.length) {
+		msgStack.push('TRACE:');
+		trace.forEach(function(t) {
+		  	msgStack.push(' -> ' + (t.file || t.sourceURL) + ': ' + t.line)
+		});
+	}
+   smartLog(msgStack.join('\n'));
+};
+
+function catchE(fun) {
+	return function(args1, args2, args3) {
+		try {
+			fun(args1, args2, args3)
+		} catch(e) {			
+			smartLog(e)
+		    setTimeout(testLoop, 100);
+		}
+	}
+}
+
+var args = system.args
+
+if (args.length != 2) {
+	console.log("please pass the name of one lesson to test")
+	phantom.exit()	
+} else {
+	var lesson = args[1];
+}
+
+var testIndex = 0;
+
+function testLoop() {			
+	if (testIndex < 0) {
+		smartLog("no tasks!")		
+		setTimeout(testLoop, 100);
+		return 
+	}
+
+	var filePath = "file:///Users/dgaynor/classadoo-lessons/tests/test_files/" + lesson + "/" + testIndex + ".html"
+
+	page.open(filePath, catchE(function(status) {				
+		if (status != "success") {
+			smartLog("test html does not exist!", status)
+		} else {
+			if(!page.injectJs('lib/dev/websites.js')) {
+				smartLog("injection FAILED");
+			}	
+
+			var result = page.evaluate(function() {  			
+				var testIndex = __importedLesson.length - 1
+				var currentTask = __importedLesson[testIndex];
+				var locationResult = RegExp(currentTask.location).test(testlocationHref)			
+				var checkResult = currentTask.check()	
+		    	return [checkResult, locationResult, testIndex]
+		    })
+		    		    
+		    testIndex = result[2];
+		    smartLog("RESULT", result.slice(0,2));	
+		}		
+
+	    setTimeout(testLoop, 100);
+	}))		
+}
+
+testLoop()
