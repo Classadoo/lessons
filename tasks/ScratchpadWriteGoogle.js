@@ -54,9 +54,14 @@ StyleGoogleHor = new function() {
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
 
-		var match = i.$(":contains(Google)").filter(function(i, el){												
-			console.log("ekek", $(el).css("left"));
-			return Number($(el).css("left").slice(0,3)) > 200
+		var match = i.$(":contains(Google)").filter(function(i, el){															
+			var prop = $(el).css("left");
+
+			if (prop) {
+				return Number(prop.slice(0,3)) > 200
+			} else {
+				return false
+			}
 		})
 		
 		return match.length > 0
@@ -72,7 +77,13 @@ StyleGoogleVert = new function() {
 		var i = new IframeManager($("#preview"));				
 		
 		var match = i.$(":contains(Google)").filter(function(i, el){												
-			return Number($(el).css("top").slice(0,3)) > 200
+			var prop = $(el).css("top");
+
+			if (prop) {
+				return Number(prop.slice(0,3)) > 200
+			} else {
+				return false
+			}			
 		})
 		
 		return match.length > 0
@@ -86,8 +97,14 @@ StyleGoogleFont = new function() {
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
-		var match = i.$(":contains(Google)").filter(function(i, el){												
-			return Number($(el).css("font").slice(0,2)) > 20
+		var match = i.$(":contains(Google)").filter(function(i, el){															
+			var prop = $(el).css("font-size");			
+
+			if (prop) {
+				return Number(prop.slice(0,2)) > 20
+			} else {
+				return false
+			}			
 		})
 		
 		return match.length > 0

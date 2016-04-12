@@ -64,14 +64,28 @@ var HtmlProcessor = function(siteInfo) {
         var htmlElement = document.querySelector('html');        
         var htmlClone = htmlElement.cloneNode(true);
         removeAllUnusedTags(htmlClone);
-        stripIframeSrc(htmlClone)
+        stripIframeSrc(htmlClone);
+        addLocationHrefScript(htmlClone);
         fillerScripts.each(function(i, script) {
             $(htmlClone).find("body").append(script);
         })        
         return htmlClone.outerHTML;
     }
 
-    // adds scripts which will content in an iframe without a source on page load. 
+    // adds a script which sets a variable called testLocationHref, so that we can test location matching
+    function addLocationHrefScript(htmlClone) {
+        function addLocation() {
+            testlocationHref = " location "
+        }
+
+        var funString = addLocation.toString().replace(" location ", location.href);
+        var script = document.createElement('script');
+        var code = document.createTextNode("(" + funString + ")()");
+        script.appendChild(code);                
+        $(htmlClone).find("head").append(script);
+    }
+
+    // generates scripts which will fill content in an iframe without a source on page load. 
     function getIframeFillerScripts() {
          return $(document).find("iframe:not([src])").map(function(i, iframe){                        
             if (iframe.contentWindow) {                
