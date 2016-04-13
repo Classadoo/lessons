@@ -1,3 +1,4 @@
 node_modules/*
 lesson-tester/node_modules/*
+tests/test_screenshots/*
 .DS_Store
