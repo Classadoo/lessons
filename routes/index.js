@@ -22,22 +22,9 @@ router.get('/', function(req, res, next) {
 
 router.get('/task_names', function(req, res, next) {		
 	mkdirp(testFileBase, function (err) {
-		require("../../lessons/" + lessonName);
+		require("../lessons/" + lessonName);
 
 		var names = __importedLesson.map(function(task) { return task.name });
-
-		console.log(names);
-
-		// var currentDirectoryIds = fs.readdirSync(testFileBase).map(function(file) {
-		// 	var name = file.split(".")[0];
-		// 	console.log("name", name);
-		// 	return Number(name)
-		// })
-
-		// var sorted = currentDirectoryIds.sort(sortNumber)		
-
-		// var previousId = sorted[sorted.length - 1]
-		// if (previousId === undefined) previousId = -1
 
 		res.send({names: names}, 200);	
 	})			

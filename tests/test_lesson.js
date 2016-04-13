@@ -46,13 +46,15 @@ var results = []
 testIndex = 0;
 
 function checkLoop() {
-	if (!__importedLesson[testIndex]) {
+	var task = __importedLesson[testIndex]
+
+	if (!task) {
 		console.log("TESTING DONE");
 		printResults();
 		return
 	}
 
-	var filePath = "file:///Users/dgaynor/classadoo-lessons/tests/test_files/" + lesson + "/" + testIndex + ".html"
+	var filePath = "file:///Users/dgaynor/classadoo-lessons/samples/" + task.name + ".html"
 
 	page.open(filePath, catchE(function(status) {						
 		if (status != "success") {
@@ -80,7 +82,7 @@ function checkLoop() {
 
 function success(result) {	
 	if (!result[0]) {		
-		var renderPath = wd + "/tests/test_screenshots/" + testIndex + ".png";
+		var renderPath = wd + "/tests/test_screenshots/" + __importedLesson[testIndex].name + ".png";
 		page.render(renderPath);
 	}	    	
 
@@ -99,7 +101,7 @@ checkLoop();
 
 function printResults() {	
 	results.forEach(function(res, i) {		
-		console.log(i, "Check:", res[0], "Location:", res[1], res[2]);
+		console.log(__importedLesson[i].name, "Check:", res[0], "Location:", res[1], res[2]);
 	})	
 	phantom.exit();
 }
