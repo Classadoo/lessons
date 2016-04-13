@@ -1,5 +1,6 @@
 var page = require('webpage').create();
 var system = require('system');
+var fs = require('fs');
 
 // only logs if there's a change
 var lastLog;
@@ -46,16 +47,14 @@ if (args.length != 2) {
 	var lesson = args[1];
 }
 
-var testIndex = 0;
+var wd = fs.workingDirectory
 
-function testLoop() {			
-	if (testIndex < 0) {
-		smartLog("no tasks!")		
-		setTimeout(testLoop, 100);
-		return 
-	}
+require(wd + "/lib/dev/" + lesson + ".js");
 
-	var filePath = "file:///Users/dgaynor/classadoo-lessons/tests/test_files/" + lesson + "/" + testIndex + ".html"
+var taskName = __importedLesson[__importedLesson.length - 1].name;
+
+function testLoop() {		
+	var filePath = "file:///Users/dgaynor/classadoo-lessons/samples/" + taskName + ".html"
 
 	page.open(filePath, catchE(function(status) {				
 		if (status != "success") {
@@ -72,8 +71,7 @@ function testLoop() {
 				var checkResult = currentTask.check()					
 		    	return [checkResult || false, locationResult, testIndex]
 		    })
-
-		    testIndex = result[2];
+		    
 		    smartLog("RESULT", result.slice(0,2));	
 		}		
 

@@ -6,6 +6,7 @@ GoogleDiv = new function() {
 	this.description = 'Make a div with the word "Google" in it'
 	this.hint = "remember you'll need to start the div with <div> and end it with </div>"
 	this.location = "scratchpad.io"
+	this.name = "GoogleDiv"
 	
 	this.check = function() {		
 		var i = new IframeManager($("#preview"));				
@@ -17,6 +18,7 @@ GoogleDivWithinDiv = new function() {
 	this.description = 'Now put that div container inside another div container',
 	this.hint = "remember you'll need to start the div with <div> and end it with </div>"
 	this.location = "scratchpad.io"
+	this.name = "GoogleDivWithinDiv"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
@@ -28,6 +30,7 @@ SearchDiv = new function() {
 	this.description = 'Now make a div containing the word "Search". This will later become our search button',
 	this.hint = "remember you'll need to start the div with <div> and end it with </div>"
 	this.location = "scratchpad.io"
+	this.name = "SearchDiv"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
@@ -39,6 +42,7 @@ FeelingLuckyDiv = new function() {
 	this.description = 'Now make a div containing the words "I\'m Feeling Lucky". This will later become the "I\'m Feeling Lucky" button',
 	this.hint = "remember you'll need to start the div with <div> and end it with </div>"
 	this.location = "scratchpad.io"
+	this.name = "FeelingLuckyDiv"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
@@ -50,6 +54,7 @@ StyleGoogleHor = new function() {
 	this.description = 'Now move the div containing "Google" horizontally until it\'s near the center of the page'
 	this.hint = "use 'style'"
 	this.location = "scratchpad.io"
+	this.name = "StyleGoogleHor"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
@@ -72,6 +77,7 @@ StyleGoogleVert = new function() {
 	this.description = 'Now move the div containing "Google" vertically until it\'s near the center of the page'
 	this.hint = "use 'style'"
 	this.location = "scratchpad.io"
+	this.name = "StyleGoogleVert"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
@@ -94,6 +100,7 @@ StyleGoogleFont = new function() {
 	this.description = 'Now make "Google" have a font-size larger than 20'
 	this.hint = "use 'style'"
 	this.location = "scratchpad.io"
+	this.name = "StyleGoogleFont"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
@@ -115,6 +122,7 @@ MoveSearch = new function() {
 	this.description = 'Cool, now let\'s put the Search button in the right place. Move it to the center, and below "Google"',
 	this.hint = "use 'style'"
 	this.location = "scratchpad.io"
+	this.name = "MoveSearch"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
@@ -134,6 +142,7 @@ MoveLucky = new function() {
 	this.description = 'Finally, let\'s put the "I\'m feeling lucky" in the right place. Move it below "Google" and to the right of the search button.',
 	this.hint = "use 'style'"
 	this.location = "scratchpad.io"
+	this.name = "MoveLucky"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));				
@@ -155,13 +164,14 @@ ButtonBorders = new function() {
 	this.description = 'Bonus Challenge: let\'s try draw a box around our "Search" and "I\'m feeling lucky" buttons. To learn what property to use try googling "html border property"',
 	this.hint = "use 'style'"
 	this.location = "scratchpad.io"
+	this.name = "ButtonBorders"
 	
 	this.check = function() {			
 		var i = new IframeManager($("#preview"));						
 		var searchBorder = elThatContains(i, "Search").css("border-style")
 		var luckyBorder = elThatContains(i, "I\'m Feeling Lucky").css("border-style");		
 
-		return !!(searchBorder !== "none" && luckyBorder !== "none")
+		return !!(searchBorder && searchBorder !== "none" && luckyBorder && luckyBorder !== "none")
 	}	
 }
 
