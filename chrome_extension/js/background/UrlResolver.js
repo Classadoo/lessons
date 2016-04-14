@@ -125,17 +125,23 @@ UrlResolver = function(siteInfo, tabId, fileSystemBase){
                     return matchedGroup
                 }
 
-                var newUrlAndFilePath = generateAwsUrl(capturedUrl);
-                var newUrl = newUrlAndFilePath.fullUrl;
-                var filePath = newUrlAndFilePath.awsPath;
+                // var newUrlAndFilePath = generateAwsUrl(capturedUrl);
+                // var newUrl = newUrlAndFilePath.awsPath;            
+                var extension = capturedUrl.substr((~-capturedUrl.lastIndexOf(".") >>> 0) + 2);
+                var newName = Util.guid() + "." + extension
+
                 var absoluteUrl = URI(capturedUrl).absoluteTo(resourceLocation).absoluteTo(baseURI).href();
 
-                if (originalToAwsUrlMap[absoluteUrl]){
-                    newUrl = generateAwsUrlFromAwsPath(originalToAwsUrlMap[absoluteUrl]);
-                } else {
-                    originalToAwsUrlMap[absoluteUrl] = filePath;
-                }
-                return "url("+newUrl+")";
+                // if (originalToAwsUrlMap[absoluteUrl]){
+                //     newUrl = generateAwsUrlFromAwsPath(originalToAwsUrlMap[absoluteUrl]);                    
+                // } else {
+                    var filePathArray = URI(newName).absoluteTo(resourceLocation).absoluteTo(baseURI).pathname().split("/");                    
+                    var relativeOnly = filePathArray.slice(1, filePathArray.length).join("/");
+
+                    originalToAwsUrlMap[absoluteUrl] = relativeOnly;
+                // }                
+
+                return "url("+newName+")";
             }
         });
 
@@ -230,7 +236,7 @@ UrlResolver = function(siteInfo, tabId, fileSystemBase){
         }
         
 
-        var escapedShortPath = $.map(shortPath.split("/"),function(sect,i){ return sect }).join("/");        
+        var escapedShortPath = $.map(shortPath.split("/"),function(sect,i){ return encodeURIComponent(sect) }).join("/");        
 
         var newLocation = generateAwsUrlFromAwsPath(escapedShortPath);
         return {fullUrl: newLocation, awsPath: shortPath};

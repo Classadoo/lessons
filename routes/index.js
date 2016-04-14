@@ -7,8 +7,8 @@ var path = require('path');
 var mkdirp = require('mkdirp');
 
 var lessonDir = "/Users/dgaynor/classadoo-lessons/samples/"
-var testDir = "/Users/dgaynor/classadoo-lessons/samples/"
-var lessonName = "websites.js"
+var testDir = "../samples/"
+var lessonName = "websites_2.js"
 var testFileBase = testDir
 
 function sortNumber(a,b) {
@@ -77,9 +77,8 @@ ResourceHandler = function(req) {
 	}
 
 	function writeFile(base, filePath, data) {		
-		var writePath = path.join(base, filePath);
+		var writePath = path.join(__dirname, base, filePath);
 		console.log(filePath, base, writePath)
-
 
 		mkdirp(path.dirname(writePath), function (err) {
 			fs.writeFile(writePath, data);

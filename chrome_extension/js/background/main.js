@@ -1,6 +1,6 @@
 var showingCurrentId = true;
 var idToSave = 0
-var testFileDir = "../../test_resources"
+var testFileDir = "../tests/test_resources"
 var toolbarOpen = false;
 var currentTask = false;
 

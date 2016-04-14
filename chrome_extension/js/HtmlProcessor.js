@@ -60,6 +60,10 @@ var HtmlProcessor = function(siteInfo) {
         })
     }
 
+    function stripPageMarkerBox(htmlClone) {
+        $(htmlClone).find(':contains(Use UP/DOWN to change the color. Press DEL to clear, ESC or "X" to close.)').remove();
+    }
+
     function getCurrentSiteHtml(){
         var fillerScripts = getIframeFillerScripts();                
         var htmlElement = document.querySelector('html');        
@@ -67,6 +71,7 @@ var HtmlProcessor = function(siteInfo) {
         removeAllUnusedTags(htmlClone);
         stripIframeSrc(htmlClone);
         addLocationHrefScript(htmlClone);
+        stripPageMarkerBox(htmlClone);
         ModifyPageForToolbar(false, $(htmlClone));
         fillerScripts.each(function(i, script) {
             $(htmlClone).find("body").append(script);

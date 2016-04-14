@@ -43,7 +43,7 @@ a {
 }
 
 #menu-button {
-  background-image: url(/Users/dgaynor/classadoo-lessons/tests/test_resources/scratchpad_io/img/menu-icon_.png);
+  background-image: url(tests/test_resources/scratchpad_io/img/menu-icon_.png);
   width: 15px;
   height: 13px;
   display: block;
@@ -151,7 +151,7 @@ a {
   display: inline-block;
   width: 77px;
   opacity: 0.5;
-  background-image: url(/Users/dgaynor/classadoo-lessons/tests/test_resources/scratchpad_io/img/firebase_.png);
+  background-image: url(tests/test_resources/scratchpad_io/img/firebase_.png);
   background-size: 100%;
   transition: all 0.15s;
   -moz-transition: all 0.15s;
@@ -268,7 +268,7 @@ a {
   width: 176px;
   height: 29px;
   text-indent: -99999px;
-  background-image: url(/Users/dgaynor/classadoo-lessons/tests/test_resources/scratchpad_io/img/logo_.png);
+  background-image: url(tests/test_resources/scratchpad_io/img/logo_.png);
   margin: 10px;
 }
 

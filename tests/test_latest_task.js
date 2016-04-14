@@ -51,28 +51,42 @@ var wd = fs.workingDirectory
 
 require(wd + "/lib/dev/" + lesson + ".js");
 
-var taskName = __importedLesson[__importedLesson.length - 1].name;
-
 function testLoop() {		
+	var taskName = __importedLesson[__importedLesson.length - 1].name;
+	
 	var filePath = "file:///Users/dgaynor/classadoo-lessons/samples/" + taskName + ".html"
 
 	page.open(filePath, catchE(function(status) {				
 		if (status != "success") {
 			smartLog("test html does not exist!", filePath, status)
 		} else {
-			if(!page.injectJs('lib/dev/websites.js')) {
+			if(!page.injectJs('lib/dev/' + lesson + ".js")) {
 				smartLog("injection FAILED");
 			}	
 
-			var result = page.evaluate(function() {				
+			var result = page.evaluate(function() {								
 				var testIndex = __importedLesson.length - 1
 				var currentTask = __importedLesson[testIndex];
 				var locationResult = RegExp(currentTask.location).test(testlocationHref)							
+
 				var checkResult = currentTask.check()					
-		    	return [checkResult || false, locationResult, testIndex]
+
+				var previousIndex = testIndex - 1
+
+				var previousResult = false;
+				if (previousIndex > -1) {
+					try {
+						var prevTask = __importedLesson[previousIndex];
+						var previousResult = prevTask.check()						
+					} catch(e) {
+						previousResult = "ERROR"
+					}					
+				}
+
+		    	return ["Current: " + (checkResult || false), "Previous: " +  previousResult, "Location: " + locationResult]
 		    })
 		    
-		    smartLog("RESULT", result.slice(0,2));	
+		    smartLog("RESULT for " + taskName, result.join("\n"));	
 		}		
 
 	    setTimeout(testLoop, 100);
