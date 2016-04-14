@@ -42,3 +42,29 @@ ChangeImgSrc = new function() {
 		}
 	}		
 }
+
+ChangeElementStyle = new function() {
+	this.description = 'Now change the style of an element on the page'
+	this.hint = "right-click, inspect or inspect element",
+	this.location = "htekidsnews.com"
+	this.name = "ChangeElementStyle"
+	
+	var starting;
+	this.start = function() {		
+		starting = getStyles()		
+	}
+
+	function getStyles() {
+		return $("[style]").map(function(i, el) {
+			return el.getAttribute("style")
+		}).toArray()
+	}
+
+	this.check = function() {	
+		console.log(getStyles().toString(), starting.toString());	
+		if (starting) {			
+			console.log("asd", starting.toString() !== getStyles.toString())
+			return starting.toString() !== getStyles().toString()
+		}
+	}		
+}
