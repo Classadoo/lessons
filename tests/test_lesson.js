@@ -39,7 +39,7 @@ if (args.length != 2) {
 
 var wd = fs.workingDirectory
 
-require(wd + "/lib/prod/" + lesson + ".js");
+require(wd + "/lib/dev/" + lesson + ".js");
 
 var results = []
 
@@ -61,15 +61,20 @@ function checkLoop() {
 			fail("test html does not exist!");
 			return
 		} else {
-			if(!page.injectJs('lib/dev/websites.js')) {				
+			if(!page.injectJs('lib/dev/' + lesson + '.js')) {				
 				fail("injection failed!");
 				return 
 			}	
 
-			function check() {  			
-				var currentTask = __importedLesson[ testIndex ];
-				var locationResult = RegExp(currentTask.location).test(testlocationHref)			
-				var checkResult = currentTask.check()	
+			function check() {  
+				if (document.getElementById("video-sample")) {					
+					var locationResult = "VIDEO"
+					var checkResult = "VIDEO"
+				} else {
+					var currentTask = __importedLesson[ testIndex ];					
+					var locationResult = RegExp(currentTask.location).test(testlocationHref)			
+					var checkResult = currentTask.check()	
+				}				
 		    	return [checkResult, locationResult]
 		    }
 

@@ -13,7 +13,9 @@ __importedLesson = [
 	MoveSearch,
 	MoveLucky,
 	AddImage,
-	ButtonBorders,
+	ChangeImageHeight,
+	ChangeImageWidth,
+	// ButtonBorders,
 
 	// new stuff
 	ChangePageText,

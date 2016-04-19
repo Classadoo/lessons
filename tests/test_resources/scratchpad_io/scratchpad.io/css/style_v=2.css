@@ -43,7 +43,7 @@ a {
 }
 
 #menu-button {
-  background-image: url(tests/test_resources/scratchpad_io/img/menu-icon_.png);
+  background-image: url(bab0e509-d032-43da-847d-2d17e39cf819.png);
   width: 15px;
   height: 13px;
   display: block;
@@ -151,7 +151,7 @@ a {
   display: inline-block;
   width: 77px;
   opacity: 0.5;
-  background-image: url(tests/test_resources/scratchpad_io/img/firebase_.png);
+  background-image: url(73f4764b-f8fb-45a5-a6dc-a0d5af781519.png);
   background-size: 100%;
   transition: all 0.15s;
   -moz-transition: all 0.15s;
@@ -268,7 +268,7 @@ a {
   width: 176px;
   height: 29px;
   text-indent: -99999px;
-  background-image: url(tests/test_resources/scratchpad_io/img/logo_.png);
+  background-image: url(25a0089b-e3d1-4c43-a775-0ed685d9cd59.png);
   margin: 10px;
 }
 

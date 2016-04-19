@@ -7,7 +7,7 @@ var lastLog;
 function smartLog(log1, log2) {	
 	var aggLog = log1 + log2
 	if (lastLog !== aggLog) { 
-		console.log(log1, log2)
+		console.log(log1, log2 || "")
 		lastLog = aggLog
 	}	
 }
@@ -51,14 +51,12 @@ var wd = fs.workingDirectory
 
 require(wd + "/lib/dev/" + lesson + ".js");
 
-function testLoop() {		
-	var taskName = __importedLesson[__importedLesson.length - 1].name;
-	
-	var filePath = "file:///Users/dgaynor/classadoo-lessons/samples/" + taskName + ".html"
-
+function testTask(taskName, callback) {		
+	var filePath = "file:///Users/dgaynor/classadoo-lessons/samples/" + taskName + ".html"	
 	page.open(filePath, catchE(function(status) {				
 		if (status != "success") {
 			smartLog("test html does not exist!", filePath, status)
+			return
 		} else {
 			if(!page.injectJs('lib/dev/' + lesson + ".js")) {
 				smartLog("injection FAILED");
@@ -69,28 +67,35 @@ function testLoop() {
 				var currentTask = __importedLesson[testIndex];
 				var locationResult = RegExp(currentTask.location).test(testlocationHref)							
 
-				var checkResult = currentTask.check()					
+				var checkResult = currentTask.check()											
 
-				var previousIndex = testIndex - 1
+		    	return ["Check: " + (checkResult || false), "Location: " + locationResult]
+		    })		    		   
 
-				var previousResult = false;
-				if (previousIndex > -1) {
-					try {
-						var prevTask = __importedLesson[previousIndex];
-						var previousResult = prevTask.check()						
-					} catch(e) {
-						previousResult = "ERROR"
-					}					
-				}
+			callback(result);
+		}	
+	}))
+}
 
-		    	return ["Current: " + (checkResult || false), "Previous: " +  previousResult, "Location: " + locationResult]
-		    })
-		    
-		    smartLog("RESULT for " + taskName, result.join("\n"));	
-		}		
+function testLoop() {	
+	var currentTaskName = __importedLesson[__importedLesson.length - 1].name;
+	testTask(currentTaskName, function(results) {		
+		setTimeout(function() { testPrevious(results) }, 50);
+	});
 
-	    setTimeout(testLoop, 100);
-	}))		
+	function testPrevious(currentResults) {
+		var previousTask = __importedLesson[__importedLesson.length - 2] 		
+		if (previousTask) {
+			testTask(previousTask.name, function(results) {
+				var prevResultWithHeader = ["Previous"].concat(results.slice(0,1));				
+				smartLog("\n", currentResults.concat(prevResultWithHeader).join("\n"));
+				setTimeout(testLoop, 100);
+			});
+		} else { 
+			smartLog("\n", currentResults.concat(["Previous", false]).join("\n"));
+			setTimeout(testLoop, 100);
+		}			
+	}	
 }
 
 testLoop()

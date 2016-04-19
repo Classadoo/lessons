@@ -161,15 +161,51 @@ MoveLucky = new function() {
 }
 
 AddImage = new function() {	
-	this.description = 'Bonus: try adding an image to your site. You can do this with a tag that looks like <img src="some/url.png"></img>',
+	this.description = 'Try adding an image to your site. You can do this with a tag that looks like <img src="some/url.png"></img>',
 	this.hint = "an img tag looks like <img src='your/image/address/here.png'></img>"
 	this.location = "scratchpad.io"
 	this.name = "AddImage"
 	
 	this.check = function() {					
 		var i = new IframeManager($("#preview"));				
-		var imgWithSrc = i.$("img[src]")		
+		var imgWithSrc = i.$("img[src]");			
 		return imgWithSrc.length > 0
+	}	
+}
+
+ChangeImageHeight = new function() {	
+	this.description = 'Now change the image\'s height. You can do this by adding style="height: 100px"',
+	this.hint = "an img tag looks like <img src='your/image/address/here.png'></img>"
+	this.location = "scratchpad.io"
+	this.name = "ChangeImageHeight"
+	
+	this.check = function() {					
+		var i = new IframeManager($("#preview"));				
+		var imgWithSrc = i.$("img[src]")		
+
+		var results = imgWithSrc.filter(function(i, img) {			
+			return img.style.height
+		})
+
+		return results.length > 0
+	}	
+}
+
+ChangeImageWidth = new function() {	
+	this.description = 'Now change the image\'s width. You can do this by adding style="width: 100px"',
+	this.hint = "an img tag looks like <img src='your/image/address/here.png'></img>"
+	this.location = "scratchpad.io"
+	this.name = "ChangeImageWidth"
+	
+	this.check = function() {					
+		var i = new IframeManager($("#preview"));				
+		var imgWithSrc = i.$("img[src]")		
+
+		var results = imgWithSrc.filter(function(i, img) {			
+			return img.style.width
+		})
+
+		return results.length > 0
 	}	
 }
 
