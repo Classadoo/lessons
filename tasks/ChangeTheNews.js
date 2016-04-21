@@ -60,11 +60,58 @@ ChangeElementStyle = new function() {
 		}).toArray()
 	}
 
-	this.check = function() {	
-		console.log(getStyles().toString(), starting.toString());	
+	this.check = function() {			
 		if (starting) {			
 			console.log("asd", starting.toString() !== getStyles.toString())
 			return starting.toString() !== getStyles().toString()
 		}
+	}		
+}
+
+GoToAnotherPage = new function() {
+	this.description = 'Now go to another website, any website you want.'
+	this.location = "^((?!htekidsnews).)*$"
+	this.name = "GoToAnotherPage"
+	
+	var starting;
+	
+	function getStyles() {
+		return $("[style]").map(function(i, el) {
+			return el.getAttribute("style")
+		}).toArray()
+	}
+
+	this.check = function() {	
+		return true
+	}		
+}
+
+AddTextToThePage = new function() {
+	this.description = 'Now add this text anywhere on the page: "I am a leet hackzor"'
+	this.location = ".*"
+	this.name = "AddTextToThePage"
+	
+	var starting;
+	
+	function getStyles() {
+		return $("[style]").map(function(i, el) {
+			return el.getAttribute("style")
+		}).toArray()
+	}
+
+	this.check = function() {	
+		return $('body').text().indexOf("I am a leet hackzor") > -1;
+	}		
+}
+
+FreeChangeAPage = new function() {
+	this.description = 'Great, now mess around some more on this page. In a few minutes we\'ll have everyone present the "new" version of their chosen site'
+	this.location = ".*"
+	this.name = "FreeChangeAPage"
+
+	var start = Date.now();
+
+	this.check = function() {	
+		return (Date.now() - start) > 30000;
 	}		
 }

@@ -161,7 +161,7 @@ MoveLucky = new function() {
 }
 
 AddImage = new function() {	
-	this.description = 'Try adding an image to your site. You can do this with a tag that looks like <img src="some/url.png"></img>',
+	this.description = 'Try adding an image to your site. Use a tag like <img src="some/url.png"></img>. Set the src to any image url from google images.',
 	this.hint = "an img tag looks like <img src='your/image/address/here.png'></img>"
 	this.location = "scratchpad.io"
 	this.name = "AddImage"
