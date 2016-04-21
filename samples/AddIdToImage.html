@@ -1,0 +1,1924 @@
+<html slick-uniqueid="3"><head>
+    
+    
+    
+    
+    
+
+    
+      
+      
+    
+
+    
+
+    
+      
+    
+
+    <!--meta name="viewport" content="width=device-width, maximum-scale=0.5" /-->
+
+
+
+    
+      <style type="text/css"></style>
+
+    
+    
+    <link rel="stylesheet" type="text/css" href="../tests/test_resources/jsfiddle_net/jsfiddle.net/css/_dist-editor_update_19_.css">
+
+
+    
+      <link rel="stylesheet" type="text/css" href="../tests/test_resources/jsfiddle_net/jsfiddle.net/css/light_update_19_.css">
+
+    
+
+    
+      
+
+      
+    
+
+    
+      
+
+      
+        
+      
+    
+
+    
+    
+
+    <link rel="icon" href="../tests/test_resources/jsfiddle_net/jsfiddle.net/favicon_.png">
+    <link href="../tests/test_resources/jsfiddle_net/fonts.googleapis_family%3DLat" rel="stylesheet" type="text/css">
+
+    <title>Create a new fiddle - JSFiddle</title>
+  <link id="togetherjs-stylesheet" rel="stylesheet" href="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/togetherjs_bust%3D14612.css"><script>(function addLocation() {
+            testlocationHref = "https://jsfiddle.net/2mhednof/"
+        })()</script></head>
+  <body style="position: relative; top: 0px;"><iframe style="align-content: stretch; align-items: stretch; align-self: auto; alignment-baseline: baseline; animation-direction: normal; animation-iteration-count: 1; animation-name: none; animation-play-state: running; animation-timing-function: ease; backface-visibility: visible; baseline-shift: baseline; border-collapse: separate; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-style: solid none; border-width: 1px medium 2px; border-radius: 0px; border-spacing: 0px; bottom: auto; -webkit-box-decoration-break: slice; box-shadow: none; box-sizing: content-box; caption-side: top; clip: auto; color: black; column-count: auto; column-fill: balance; column-gap: normal; column-rule-width: medium; column-width: auto; content: normal; counter-increment: none; counter-reset: none; cursor: auto; direction: ltr; dominant-baseline: auto; flex: 0 1 auto; flex-flow: row nowrap; float: none; font-feature-settings: normal; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-kerning: auto; font-size: medium; font-stretch: normal; font-style: normal; font-variant: normal; font-variant-ligatures: normal; font-weight: normal; image-rendering: auto; justify-content: flex-start; letter-spacing: normal; -webkit-line-break: auto; line-height: normal; list-style: disc outside none; margin: 0px; max-height: none; max-width: none; min-height: 0px; min-width: 0px; opacity: 1; order: 0; orphans: 2; outline: invert none medium; outline-offset: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; page: auto; break-after: auto; break-before: auto; break-inside: auto; perspective: none; perspective-origin: 50% 50%; resize: none; right: auto; -webkit-ruby-position: before; size: auto; tab-size: 8; table-layout: auto; text-align: start; text-align-last: start; text-decoration: none; -webkit-text-emphasis-color: currentcolor; -webkit-text-emphasis-style: none; text-indent: 0px; text-overflow: clip; text-shadow: none; text-transform: none; transform: none; transform-origin: 50% 50% 0px; transform-style: flat; transition-property: all; transition-timing-function: ease; unicode-bidi: normal; vertical-align: baseline; visibility: visible; white-space: normal; widows: 2; word-break: normal; word-spacing: normal; word-wrap: normal; width: 100%; height: 60px; position: fixed; top: 0px; z-index: 10000; display: none; border-bottom-color: black; border-top-color: black; left: 0px; background: none 0% 0% / auto repeat scroll padding-box border-box transparent;"></iframe>
+    <h1>Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor.</h1>
+    <h2>online javascript editor, testing javascript online, online ide, online code editor, html, css, coffeescript, scss online editor</h2>
+    <form method="post" id="show-result" target="result" action="//fiddle.jshell.net/_display/">
+      
+      
+      <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="YxOSYrpEXjSurJQwUiWmtCD14yEY6HrK"></div>
+      <div id="header">
+        <div id="branding">
+          <p id="name" class="changelog-badge"><a title="JSFiddle " href="https://jsfiddle.net/" id="home" class="drop-target" target="_blank">JSFiddle</a><span id="HW_badge_cont" class="HW_visible"><span id="HW_badge" class="HW_visible">4</span></span></p>
+        </div>
+        
+          <div id="actions">
+  <nav class="actionCont collapsed">
+    <div class="actionItem">
+      <a class="aiButton" id="run" title="Run (CTRL + Return)" href="https://jsfiddle.net/2mhednof/#run" target="_blank"><i class="bts bt-play"></i>Run</a>
+    </div>
+
+    
+    
+
+    
+    
+      <div class="actionItem visible" style="display: none;">
+        <a class="aiButton" id="savenew" title="Save new Fiddle (CTRL + S)" href="https://jsfiddle.net/2mhednof/#save" target="_blank"><i class="bts bt-pencil"></i>Save</a>
+      </div>
+      <div class="actionItem hidden" style="display: block;">
+        <a class="aiButton" id="update" title="Update (CTRL + S)" href="https://jsfiddle.net/2mhednof/#update" target="_blank"><i class="bts bt-pencil"></i>Update</a>
+      </div>
+      <div class="actionItem hidden" style="display: block;">
+        <a class="aiButton" id="fork" title="Fork into a new Fiddle" href="https://jsfiddle.net/2mhednof/#fork" target="_blank"><i class="bts bt-fork"></i>Fork</a>
+      </div>
+    
+
+    
+
+    <div class="actionItem">
+      <a class="aiButton" id="tidy" title="Tidy messy code" href="https://jsfiddle.net/2mhednof/#tidy" target="_blank"><i class="bts bt-align-left"></i>Tidy</a>
+    </div>
+    <!-- <div class="actionItem">
+      <a class="aiButton" id="showjscode" title="Show JavaScript code" href="#showjs"><i class="bts bt-code"></i>Show JS</a>
+    </div -->
+    <div class="actionItem">
+      <a class="aiButton" id="collaborate" title="Collaborate on code" href="https://jsfiddle.net/2mhednof/#collaborate" target="_blank"><i class="bts bt-commenting"></i>Collaborate</a>
+    </div>
+  </nav>
+
+  
+  
+
+  <ul class="actionCont dropdown">
+    <li class="actionItem hidden" style="display: block;">
+      <a class="aiButton dropdownTrigger" id="share" title="Embed this Fiddle" href="https://jsfiddle.net/2mhednof/#embed" target="_blank">Embed<i class="bts bt-angle-down rightIcon"></i></a>
+      <div class="dropdownCont center">
+        <div class="dcWrapper embed">
+
+          <div id="creator">
+            <section>
+              <h3>Tabs:</h3>
+              <div class="inlineFields">
+                <label class="inputCont_checkbox checkboxCont">
+                  <input type="checkbox" name="tabs" value="js" checked="">
+                  <span class="checkbox"><i class="bts bt-check"></i></span> JavaScript
+                </label>
+                <label class="inputCont_checkbox checkboxCont">
+                  <input type="checkbox" name="tabs" value="html" checked="">
+                  <span class="checkbox"><i class="bts bt-check"></i></span> HTML
+                </label>
+                <label class="inputCont_checkbox checkboxCont">
+                  <input type="checkbox" name="tabs" value="css" checked="">
+                  <span class="checkbox"><i class="bts bt-check"></i></span> CSS
+                </label>
+                <label class="inputCont_checkbox checkboxCont">
+                  <input type="checkbox" name="tabs" value="result" checked="">
+                  <span class="checkbox"><i class="bts bt-check"></i></span> Result
+                </label>
+              </div> <!-- /inlineFields -->
+            </section>
+
+            <section class="noborder">
+              <h3>Visual:</h3>
+              <div class="inlineFields">
+                <label class="inputCont_checkbox checkboxCont">
+                  <input type="radio" name="skin" value="light" checked="">
+                  <span class="radio"></span> Light
+                </label>
+                <label class="inputCont_checkbox checkboxCont">
+                  <input type="radio" name="skin" value="dark">
+                  <span class="radio"></span> Dark
+                </label>
+              </div> <!-- /inlineFields -->
+              <label class="inputCont_text">
+                <input type="text" name="accentColor" maxlength="6" placeholder="Accent color">
+              </label>
+              <label class="inputCont_text">
+                <input type="text" name="fontColor" maxlength="6" placeholder="Font color">
+              </label>
+              <label class="inputCont_text">
+                <input type="text" name="menuColor" maxlength="6" placeholder="Menu background">
+              </label>
+              <label class="inputCont_text">
+                <input type="text" name="bodyColor" maxlength="6" placeholder="Code background">
+              </label>
+            </section>
+
+            <section class="noborder">
+              <h3>Embed code <a href="https://jsfiddle.net/2mhednof/" class="codeTypeToggle" target="_blank">Prefer iframe?</a>:</h3>
+              <div class="embedCodeWrap">
+<textarea class="embedCode" id="share_embedded_dropdown" data-view="embed" data-pattern-value="<script async src=&quot;{embedSrc}&quot;></script>">&lt;script async src="{embedSrc}"&gt;&lt;/script&gt;
+</textarea>
+              </div> <!-- /embedCodeWrap -->
+
+              <div class="embedCodeWrap hidden">
+<textarea class="embedCode" data-view="embedded" data-pattern-value="<iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;{embedSrc}&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;></iframe>">&lt;iframe width="100%" height="300" src="{embedSrc}" allowfullscreen="allowfullscreen" frameborder="0"&gt;&lt;/iframe&gt;
+</textarea>
+                <p><strong>No autoresizing</strong> to fit the code</p>
+                <p><strong>Render blocking</strong> of the parent page</p>
+              </div> <!-- /embedCodeWrap -->
+            </section>
+          </div> <!-- /creator -->
+
+          <div id="preview"><iframe width="100%" height="300" frameborder="0" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe></div> <!-- /preview -->
+
+        </div> <!-- /dcWrapper -->
+      </div> <!-- /dropdownCont -->
+    </li> <!-- /actionItem -->
+  </ul> <!-- /actionCont -->
+
+
+  
+<ul class="actionCont dropdown right">
+  <li class="actionItem hidden draftTriggerCont" style="display: none;">
+    <a class="aiButton dropdownTrigger applyDraft" href="https://jsfiddle.net/2mhednof/" target="_blank">
+      <i class="bts bt-flag"></i>Your fiddle has an unsaved draft
+    </a>
+    <div class="dropdownCont">
+      <div class="dcWrapper diffCont">
+        <h4>Diff between the <strong>saved</strong> and <strong>locally drafted</strong> fiddle:</h4>
+        <div class="diffPanels">
+          <div class="diffWrap" id="diff-html"><table class="diff inlinediff"><thead><tr><th></th><th></th><th class="texttitle">Base Text vs. New Text</th></tr></thead><tbody><tr><th></th><th>1</th><td class="insert">&lt;div id="google-box"&gt;</td></tr><tr><th></th><th>2</th><td class="insert">  Google Google</td></tr><tr><th></th><th>3</th><td class="insert">&lt;/div&gt;</td></tr><tr><th>1</th><th>4</th><td class="equal"></td></tr><tr><th class="author" colspan="3">diff view generated by <a href="http://github.com/cemerick/jsdifflib" target="_blank">jsdifflib</a></th></tr></tbody></table></div>
+          <div class="diffWrap" id="diff-js"><table class="diff inlinediff"><thead><tr><th></th><th></th><th class="texttitle">Base Text vs. New Text</th></tr></thead><tbody><tr><th>1</th><th></th><td class="delete"></td></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr><th></th><th>1</th><td class="insert">var on = true</td></tr><tr><th></th><th>2</th><td class="insert">setInterval(function() {</td></tr><tr><th></th><th>3</th><td class="insert">&nbsp;&nbsp;&nbsp;&nbsp;if (on) {</td></tr><tr><th></th><th>4</th><td class="insert">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector("#google-box").style.color = "red"&nbsp;&nbsp;&nbsp;&nbsp;</td></tr><tr><th></th><th>5</th><td class="insert">      on = false</td></tr><tr><th></th><th>6</th><td class="insert">  } else {</td></tr><tr><th></th><th>7</th><td class="insert">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector("#google-box").style.color = "blue"&nbsp;&nbsp;&nbsp;&nbsp;</td></tr><tr><th></th><th>8</th><td class="insert">      on = true</td></tr><tr><th></th><th>9</th><td class="insert">  }</td></tr><tr><th></th><th>10</th><td class="insert">}, 500)</td></tr><tr><th class="author" colspan="3">diff view generated by <a href="http://github.com/cemerick/jsdifflib" target="_blank">jsdifflib</a></th></tr></tbody></table></div>
+          <div class="diffWrap" id="diff-css"><table class="diff inlinediff"><thead><tr><th></th><th></th><th class="texttitle">Base Text vs. New Text</th></tr></thead><tbody><tr><th>1</th><th></th><td class="delete"></td></tr><tr></tr><tr></tr><tr><th></th><th>1</th><td class="insert">#google-box {</td></tr><tr><th></th><th>2</th><td class="insert">  color: blue;</td></tr><tr><th></th><th>3</th><td class="insert">}</td></tr><tr><th class="author" colspan="3">diff view generated by <a href="http://github.com/cemerick/jsdifflib" target="_blank">jsdifflib</a></th></tr></tbody></table></div>
+        </div><!-- /diffCont -->
+        <p><a class="apply" href="https://jsfiddle.net/2mhednof/" id="apply-draft" target="_blank">Apply local draft version</a> or <a href="https://jsfiddle.net/2mhednof/" id="discard-draft" target="_blank">discard it</a></p>
+      </div><!-- /actionItem -->
+    </div><!-- /dcWrapper -->
+  </li> <!-- /actionItem -->
+
+  <li class="actionItem">
+    <a class="aiButton dropdownTrigger" href="https://jsfiddle.net/2mhednof/#editor-options" target="_blank">
+      <i class="bts bt-gear"></i>Settings
+      <i class="bts bt-angle-down rightIcon"></i>
+    </a>
+    <div class="dropdownCont">
+      <div class="dcWrapper" id="editor-options">
+        <p>
+          <label class="checkboxCont">
+            <input type="checkbox" name="autoCloseTags" checked="">
+            <span class="checkbox"><i class="bts bt-check"></i></span>
+            Auto-close HTML tags
+          </label>
+        </p>
+        <p>
+          <label class="checkboxCont">
+            <input type="checkbox" name="lineNumbers" checked="">
+            <span class="checkbox"><i class="bts bt-check"></i></span>
+            Show line numbers
+          </label>
+        </p>
+        <p>
+          <label class="checkboxCont">
+            <input type="checkbox" name="lineWrapping" checked="">
+            <span class="checkbox"><i class="bts bt-check"></i></span>
+            Enable line wrapping
+          </label>
+        </p>
+        <p>
+          <label class="checkboxCont">
+            <input type="checkbox" name="indentWithTabs">
+            <span class="checkbox"><i class="bts bt-check"></i></span>
+            Indent with tabs
+          </label>
+        </p>
+
+        <div class="selectPair">
+          <span class="label">Indent size:</span>
+          <div class="selectCont">
+            <select name="indentUnit">
+              <option value="2">2 spaces</option>
+              <option value="3">3 spaces</option>
+              <option value="4">4 spaces</option>
+            </select>
+            <label><i class="bts bt-angle-down"></i></label>
+          </div> <!-- /selectCont -->
+        </div> <!-- /selectPair -->
+
+        <div class="selectPair">
+          <span class="label">Key map:</span>
+          <div class="selectCont">
+            <select name="keyMap">
+              <option value="default">Default</option>
+              <option value="sublime">Sublime Text</option>
+              <option value="vim">VIM</option>
+              <option value="emacs">EMACS</option>
+            </select>
+            <label><i class="bts bt-angle-down"></i></label>
+          </div> <!-- /selectCont -->
+        </div> <!-- /selectPair -->
+      </div>
+    </div>
+  </li> <!-- /actionItem -->
+  
+    <li class="actionItem noIcon"><a class="aiButton" id="login" title="Login" href="https://jsfiddle.net/user/login/" target="_blank"><i class="bts bt-smile"></i>Sign in</a></li>
+  
+</ul>
+
+</div>
+
+        
+        <div id="progressbar" class=" "><div class="pb"></div></div>
+      </div>
+
+      
+        <div id="sidebar">
+          
+
+          <h3 id="about_toggler" class="toggler active">Fiddle Meta</h3>
+<div class="element">
+  <div class="elementBody" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; opacity: 1; height: auto;">
+    <div class="ebCont">
+      <p>
+        <label>
+          <input id="id_title" type="text" name="title" maxlength="255" value="" placeholder="Untitled fiddle">
+        </label>
+      </p>
+      <p>
+        <label>
+          <textarea id="id_description" rows="10" cols="40" name="description" placeholder="No description"></textarea>
+        </label>
+      </p>
+      <p class="metaInfo">Add title to make the fiddle public.</p>
+    </div>
+  </div>
+</div>
+
+          
+
+<h3 class="toggler" id="resources_toggler">
+  External Resources
+</h3>
+
+
+<div class="element" id="resources_element">
+  <div class="elementBody" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; opacity: 0; height: 0px;">
+    <div class="ebCont">
+      <div id="external-resources-form">
+        <input id="external_resource" type="text" value="" placeholder="JavaScript/CSS URI">
+        <a id="add_external_resource" class="submit" href="https://jsfiddle.net/2mhednof/" title="Add resource" target="_blank"><i class="bts bt-plus-circle"></i></a>
+      </div>
+      <input type="hidden" value="" id="external_resources_id" name="add_external_resources">
+
+      <ul id="external_resources_list">
+      
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+          <h3 class="toggler">AJAX Requests</h3>
+<div class="element">
+  <div class="elementBody" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; opacity: 0; height: 0px;">
+    <div class="ebCont">
+
+      <p><code>/echo</code> simulates AJAX calls:<br>
+        JSON: <code>/echo/json/</code><br>
+        JSONP: <code>//jsfiddle.net/echo/jsonp/</code><br>
+        HTML: <code>/echo/html/</code><br>
+        XML: <code>/echo/xml/</code>
+      </p>
+      <p>See <a href="http://doc.jsfiddle.net/use/echo.html" target="_blank">docs</a> for more info.</p>
+    </div>
+  </div>
+</div>
+
+          
+          <h3 class="toggler">Legal, Credits and Links</h3>
+<div class="element">
+  <div class="elementBody" style="padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; overflow: hidden; opacity: 0; height: 0px;">
+    <div class="ebCont">
+      <p class="maintainers">Created and maintained by <a title="Piotr's twitter" href="http://twitter.com/zalun" target="_blank">Piotr</a> and <a title="UX and UI Designer" href="http://krawczyk.io/" target="_blank">Oskar</a>.</p>
+      <p>Hosting by <a href="https://m.do.co/c/52e7a0ad196d" target="_blank"><strong>DigitalOcean</strong></a></p>
+      <p><strong>License</strong></p>
+      <p>All code belongs to the poster and no license is enforced.</p>
+      <p>JSFiddle or its authors are not responsible or liable for any loss or damage of any kind during the usage of provided code.</p>
+      <p><strong>Links</strong></p>
+      <p>
+        <a href="http://doc.jsfiddle.net/" target="_blank">Docs</a><br>
+      </p>
+    </div>
+  </div>
+</div>
+
+<style media="screen">
+  .maintainers {
+    position: absolute;
+    top: -900em;
+    left: -900em;
+  }
+</style>
+
+
+          <div class="twitterCont">
+            <div id="carbonads"><span><span class="carbon-wrap"><a href="https://srv.buysellads.com/ads/click/x/GTND423NC6YIL5QIC6A4YKQWCYYI62QLCTAIVZ3JCESD4KJUCYAI6KJKC6BDKKQLCTYDVK3EHJNCLSIZ?segment=placement:jsfiddlenet;" class="carbon-img" target="_blank"><img src="../tests/test_resources/jsfiddle_net/assets.servedby-buysellads_" alt="" border="0" height="100" width="130" style="max-width:130px;"></a><a href="https://srv.buysellads.com/ads/click/x/GTND423NC6YIL5QIC6A4YKQWCYYI62QLCTAIVZ3JCESD4KJUCYAI6KJKC6BDKKQLCTYDVK3EHJNCLSIZ?segment=placement:jsfiddlenet;" class="carbon-text" target="_blank">Learn to code like a pro. Welcome to Flatiron School's Online Campus.</a></span><a href="http://carbonads.net/" class="carbon-poweredby" target="_blank">ads via Carbon</a></span></div>
+          </div>
+          
+          
+        </div>
+        <div id="content" style="height: 727px; opacity: 1;">
+          
+          
+
+
+<input type="hidden" name="version" id="id_version" value="0">
+<input type="hidden" id="id_slug" name="slug" value="2mhednof">
+
+<fieldset class="column left">
+  <div class="window top" id="panel_html" data-panel_type="html">
+    <textarea id="id_code_html" rows="10" cols="40" name="code_html" style="display: none;"></textarea>
+    <a href="https://jsfiddle.net/2mhednof/" class="windowLabel" data-panel="html" target="_blank">
+      <span class="label">HTML</span><i class="bts bt-gear"></i>
+    </a>
+  <div class="CodeMirror cm-s-default CodeMirror-wrap CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 61px; left: 39px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 35px; margin-bottom: 0px; border-right-width: 30px; min-height: 84px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"><div class="CodeMirror-cursor" style="left: 4px; top: 57px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"google-box"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  Google Google</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 84px;"></div><div class="CodeMirror-gutters" style="height: 212px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 34px;"></div></div></div></div><ul class="warningTooltip"></ul></div>
+  <div class="handler handler_horizontal" style="top: 183px;"></div>
+  <div class="window bottom" id="panel_js" data-panel_type="js">
+    <textarea id="id_code_js" rows="10" cols="40" name="code_js" style="display: none;"></textarea>
+    <a href="https://jsfiddle.net/2mhednof/" class="windowLabel" data-panel="js" target="_blank">
+      <span class="label">JavaScript</span><i class="bts bt-gear"></i>
+    </a>
+  <div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 39px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="bottom: 0px; width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 35px; margin-bottom: 0px; border-right-width: 30px; min-height: 217px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>10</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">on</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-variable">setInterval</span>(<span class="cm-keyword">function</span>() {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-keyword">if</span> (<span class="cm-variable">on</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-string">"#google-box"</span>).<span class="cm-property">style</span>.<span class="cm-property">color</span> <span class="cm-operator">=</span> <span class="cm-string">"red"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-variable">on</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  } <span class="cm-keyword">else</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-string">"#google-box"</span>).<span class="cm-property">style</span>.<span class="cm-property">color</span> <span class="cm-operator">=</span> <span class="cm-string">"blue"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-variable">on</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}, <span class="cm-number">500</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 217px;"></div><div class="CodeMirror-gutters" style="height: 575px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 34px;"></div></div></div></div><ul class="warningTooltip"></ul></div>
+  <div class="shim"></div>
+</fieldset>
+
+<div class="handler" id="handler_vertical" style="left: 624px;"></div>
+
+<fieldset class="column right">
+  <div class="window top" id="panel_css" data-panel_type="css">
+    <textarea id="id_code_css" rows="10" cols="40" name="code_css" style="display: none;"></textarea>
+    <a href="https://jsfiddle.net/2mhednof/" class="windowLabel" data-panel="css" target="_blank">
+      <span class="label">CSS</span><i class="bts bt-gear"></i>
+    </a>
+  <div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 39px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 35px; margin-bottom: 0px; border-right-width: 30px; min-height: 84px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-builtin">#google-box</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-property">color</span>: <span class="cm-keyword">blue</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 84px;"></div><div class="CodeMirror-gutters" style="height: 212px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 34px;"></div></div></div></div><ul class="warningTooltip"></ul></div>
+  <div class="handler handler_horizontal" style="top: 183px;"></div>
+  <div id="result" class="window bottom">
+    <iframe name="result" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals" frameborder="0" data-test-id="0"></iframe>
+    
+      <span class="windowLabel">Result</span>
+    
+  </div>
+  <div class="shim"></div>
+</fieldset>
+
+<div class="windowSettings html">
+  <h3>Language</h3>
+<div class="selectCont">
+  <select name="panel_html" class="panelChoice" id="panel_html_choice" disabled="disabled" data-panel_id="id_code_html" data-panel="html">
+    
+      <option data-mime-type="text/html" value="0" selected="">HTML</option>
+    
+  </select>
+  <label for="js_lib"><i class="bts bt-angle-down"></i></label>
+</div> <!-- /selectCont -->
+
+<h3>Doctype</h3>
+<div class="selectCont">
+  <select name="doctype">
+    
+      <option id="dtd_XHTML 1.0 Strict" value="1">XHTML 1.0 Strict</option>
+    
+      <option id="dtd_XHTML 1.0 Transitional" value="2">XHTML 1.0 Transitional</option>
+    
+      <option selected="" id="dtd_HTML 5" value="3">HTML 5</option>
+    
+      <option id="dtd_HTML 4.01 Strict" value="4">HTML 4.01 Strict</option>
+    
+      <option id="dtd_HTML 4.01 Transitional" value="5">HTML 4.01 Transitional</option>
+    
+      <option id="dtd_HTML 4.01 Frameset" value="6">HTML 4.01 Frameset</option>
+    
+  </select>
+  <label for="doctype"><i class="bts bt-angle-down"></i></label>
+</div>
+
+<h3>Body tag</h3>
+<p>
+  <label>
+    <input id="id_body_tag" type="text" name="body_tag" maxlength="255">
+  </label>
+</p>
+
+</div> <!-- /windowSettings -->
+
+<div class="windowSettings js">
+  
+
+
+<h3>Language</h3>
+<div class="selectCont">
+  <select name="panel_js" class="panelChoice" id="panel_js_choice" data-panel_id="id_code_js" data-panel="js">
+    
+      <option data-mime-type="text/javascript" value="0" selected="">JavaScript</option>
+    
+      <option data-mime-type="text/x-coffeescript" value="1">CoffeeScript</option>
+    
+      <option data-mime-type="application/javascript;version=1.7" value="2">JavaScript 1.7</option>
+    
+      <option data-mime-type="text/babel" value="3">Babel</option>
+    
+      <option data-mime-type="text/typescript" value="4">TypeScript</option>
+    
+  </select>
+  <label for="js_lib"><i class="bts bt-angle-down"></i></label>
+</div> <!-- /selectCont -->
+
+<h3>Frameworks &amp; Extensions</h3>
+
+  
+    
+<div class="selectCont">
+  <select name="js_lib" id="js_lib">
+    
+    <optgroup label="Mootools">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <option value="59">Mootools (nightly)</option>
+      
+        <option value="261">Mootools 1.5.2 (nocompat)</option>
+      
+        <option value="263">Mootools 1.5.2</option>
+      
+        
+      
+        <option value="216">Mootools 1.5.1</option>
+      
+        
+      
+        <option value="208">Mootools 1.5.0</option>
+      
+        <option value="96">Mootools 1.4.5 (compat)</option>
+      
+        <option value="95">Mootools 1.4.5</option>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <option value="63">Mootools 1.3.2 (compat)</option>
+      
+        <option value="62">Mootools 1.3.2</option>
+      
+        
+      
+        
+      
+        
+      
+        <option value="144">Mootools 1.2.6</option>
+      
+        
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="jQuery">
+      
+        
+      
+        <option value="303">jQuery //code.jquery.com/jquery-2.2.2</option>
+      
+        
+      
+        <option value="46">jQuery (edge)</option>
+      
+        <option value="260">jQuery 3.0.0-alpha1</option>
+      
+        <option value="305">jQuery 2.2.3</option>
+      
+        <option value="295">jQuery 2.2.1</option>
+      
+        <option value="291">jQuery 2.2.0</option>
+      
+        <option value="275">jQuery 2.1.4</option>
+      
+        <option value="248">jQuery 2.1.3</option>
+      
+        <option value="188">jQuery 2.1.0</option>
+      
+        <option value="157">jQuery 2.0.2</option>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <option value="301">jQuery 1.12.2</option>
+      
+        <option value="297">jQuery 1.12.1</option>
+      
+        <option value="293">jQuery 1.12.0</option>
+      
+        <option value="186">jQuery 1.11.0</option>
+      
+        <option value="156">jQuery 1.10.1</option>
+      
+        
+      
+        <option value="131">jQuery 1.9.1</option>
+      
+        <option value="112">jQuery 1.8.3</option>
+      
+        <option value="101">jQuery 1.7.2</option>
+      
+        
+      
+        
+      
+        <option value="75">jQuery 1.6.4</option>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <option value="307">jQuery 1.1.3</option>
+      
+    </optgroup>
+    
+    <optgroup label="Prototype">
+      
+        
+      
+        <option value="265">Prototype 1.7.3</option>
+      
+        <option value="254">Prototype 1.7.2</option>
+      
+        <option value="54">Prototype 1.7.1</option>
+      
+        <option value="4">Prototype 1.6.1.0</option>
+      
+    </optgroup>
+    
+    <optgroup label="YUI">
+      
+        
+      
+        <option value="230">YUI 3.17.2</option>
+      
+        <option value="204">YUI 3.16.0</option>
+      
+        <option value="182">YUI 3.14.0</option>
+      
+        <option value="153">YUI 3.10.1</option>
+      
+        
+      
+        <option value="130">YUI 3.8.0</option>
+      
+        <option value="123">YUI 3.7.3</option>
+      
+        <option value="118">YUI 3.6.0</option>
+      
+        <option value="102">YUI 3.5.0</option>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <option value="9">YUI 2.8.0r4</option>
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="Glow">
+      
+        
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="No-Library">
+      
+        <option value="11" selected="selected">No-Library (pure JS)</option>
+      
+    </optgroup>
+    
+    <optgroup label="Dojo">
+      
+        <option value="87">Dojo (nightly)</option>
+      
+        <option value="240">Dojo 1.10.4</option>
+      
+        
+      
+        
+      
+        <option value="242">Dojo 1.9.7</option>
+      
+        
+      
+        
+      
+        
+      
+        <option value="244">Dojo 1.8.10</option>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <option value="246">Dojo 1.7.8</option>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <option value="196">Dojo 1.6.2</option>
+      
+        
+      
+        
+      
+        <option value="194">Dojo 1.5.3</option>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="Processing.js">
+      
+        <option value="206">Processing.js 1.4.7</option>
+      
+        <option value="135">Processing.js 1.4.1</option>
+      
+        <option value="81">Processing.js 1.3.6</option>
+      
+        <option value="67">Processing.js 1.2.3</option>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="ExtJS">
+      
+        <option value="256">ExtJS 5.1.0</option>
+      
+        <option value="258">ExtJS 5.0.0</option>
+      
+        <option value="147">ExtJS 4.2.0</option>
+      
+        <option value="80">ExtJS 4.1.1</option>
+      
+        <option value="107">ExtJS 4.1.0</option>
+      
+        
+      
+        <option value="109">ExtJS 3.4.0</option>
+      
+        <option value="23">ExtJS 3.1.0</option>
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="Raphael">
+      
+        <option value="76">Raphael 2.1.0</option>
+      
+        <option value="36">Raphael 1.5.2 (min)</option>
+      
+        <option value="30">Raphael 1.4</option>
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="RightJS">
+      
+        <option value="136">RightJS 2.3.1</option>
+      
+        <option value="45">RightJS 2.1.1</option>
+      
+    </optgroup>
+    
+    <optgroup label="Three.js">
+      
+        <option value="82">Three.js r54</option>
+      
+    </optgroup>
+    
+    <optgroup label="Zepto">
+      
+        <option value="90">Zepto 1.0rc1</option>
+      
+    </optgroup>
+    
+    <optgroup label="Enyo">
+      
+        <option value="115">Enyo (nightly)</option>
+      
+        <option value="299">Enyo 2.7.0</option>
+      
+        <option value="238">Enyo 2.5.1</option>
+      
+        <option value="214">Enyo 2.4.0</option>
+      
+        <option value="145">Enyo 2.2.0</option>
+      
+        <option value="121">Enyo 2.1</option>
+      
+        <option value="116">Enyo 2.0.1</option>
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="Shipyard">
+      
+        <option value="99">Shipyard (nightly)</option>
+      
+        <option value="105">Shipyard 0.2</option>
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="Knockout.js">
+      
+        <option value="277">Knockout.js 3.4.0</option>
+      
+        <option value="172">Knockout.js 3.0.0</option>
+      
+        <option value="163">Knockout.js 2.3.0</option>
+      
+        <option value="122">Knockout.js 2.2.1</option>
+      
+        <option value="117">Knockout.js 2.1.0</option>
+      
+        <option value="104">Knockout.js 2.0.0</option>
+      
+    </optgroup>
+    
+    <optgroup label="The X Toolkit">
+      
+        <option value="106">The X Toolkit edge</option>
+      
+    </optgroup>
+    
+    <optgroup label="AngularJS">
+      
+        <option value="281">AngularJS 2.0.0-alpha.47</option>
+      
+        <option value="283">AngularJS 1.4.8</option>
+      
+        <option value="180">AngularJS 1.2.1</option>
+      
+        <option value="137">AngularJS 1.1.1</option>
+      
+        
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="Ember">
+      
+        <option value="190">Ember (latest)</option>
+      
+        
+      
+        
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="Underscore">
+      
+        <option value="267">Underscore 1.8.3</option>
+      
+        <option value="160">Underscore 1.4.4</option>
+      
+        <option value="133">Underscore 1.4.3</option>
+      
+        <option value="111">Underscore 1.3.3</option>
+      
+    </optgroup>
+    
+    <optgroup label="Bonsai">
+      
+        <option value="120">Bonsai 0.4.1</option>
+      
+    </optgroup>
+    
+    <optgroup label="KineticJS">
+      
+        <option value="139">KineticJS 4.3.1</option>
+      
+        <option value="124">KineticJS 4.0.5</option>
+      
+    </optgroup>
+    
+    <optgroup label="FabricJS">
+      
+        <option value="250">FabricJS 1.5.0</option>
+      
+        <option value="178">FabricJS 1.4.0</option>
+      
+        <option value="161">FabricJS 1.2.0</option>
+      
+        <option value="125">FabricJS 0.9</option>
+      
+    </optgroup>
+    
+    <optgroup label="qooxdoo">
+      
+        <option value="126">qooxdoo 2.1</option>
+      
+        <option value="127">qooxdoo 2.0.3</option>
+      
+    </optgroup>
+    
+    <optgroup label="D3">
+      
+        <option value="134">D3 3.x</option>
+      
+    </optgroup>
+    
+    <optgroup label="CreateJS">
+      
+        <option value="279">CreateJS 2015.05.21</option>
+      
+        <option value="170">CreateJS 2013.09.25</option>
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="WebApp Install">
+      
+        <option value="142">WebApp Install 0.1</option>
+      
+    </optgroup>
+    
+    <optgroup label="Thorax">
+      
+        <option value="174">Thorax 2.0.0rc6</option>
+      
+        <option value="143">Thorax 2.0.0rc3</option>
+      
+    </optgroup>
+    
+    <optgroup label="Paper.js">
+      
+        <option value="158">Paper.js 0.22</option>
+      
+    </optgroup>
+    
+    <optgroup label="React">
+      
+        <option value="285">React 0.14.3</option>
+      
+        <option value="192">React 0.9.0</option>
+      
+        <option value="184">React 0.8.0</option>
+      
+        <option value="166">React 0.4.0</option>
+      
+        <option value="159">React 0.3.2</option>
+      
+    </optgroup>
+    
+    <optgroup label="svg.js">
+      
+        <option value="269">svg.js 2.1.1</option>
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="Minified">
+      
+        <option value="164">Minified 1.0 beta1</option>
+      
+    </optgroup>
+    
+    <optgroup label="jTypes">
+      
+        <option value="165">jTypes 2.1.0</option>
+      
+    </optgroup>
+    
+    <optgroup label="Lo-Dash">
+      
+        <option value="167">Lo-Dash 2.2.1</option>
+      
+    </optgroup>
+    
+    <optgroup label="Brick">
+      
+        <option value="176">Brick edge</option>
+      
+    </optgroup>
+    
+    <optgroup label="RactiveJS">
+      
+        
+      
+        
+      
+        <option value="287">RactiveJS 0.7.3</option>
+      
+    </optgroup>
+    
+    <optgroup label="Vue">
+      
+        <option value="236">Vue (edge)</option>
+      
+        <option value="289">Vue 1.0.12</option>
+      
+        
+      
+    </optgroup>
+    
+    <optgroup label="JSBlocks">
+      
+        <option value="252">JSBlocks (edge)</option>
+      
+    </optgroup>
+    
+    <optgroup label="OpenUI5">
+      
+        <option value="271">OpenUI5 (latest, mobile)</option>
+      
+    </optgroup>
+    
+    <optgroup label="MithrilJS">
+      
+        <option value="273">MithrilJS 0.2.0</option>
+      
+    </optgroup>
+    
+  </select>
+  <label for="js_lib"><i class="bts bt-angle-down"></i></label>
+</div>
+
+<ul id="js_dependency">
+  
+
+</ul>
+
+  
+
+
+<h3>Load type</h3>
+<div class="selectCont">
+  <select name="js_wrap" id="id_js_wrap">
+<option value="l" selected="selected">onLoad</option>
+<option value="d">onDomready</option>
+<option value="h">No wrap - in &lt;head&gt;</option>
+<option value="b">No wrap - in &lt;body&gt;</option>
+</select>
+  <label for="js_wrap"><i class="bts bt-angle-down"></i></label>
+</div>
+
+
+  <h3>Framework &lt;script&gt; attribute</h3>
+  <p class="libraryTagAttributes">
+    <label>
+      <input id="id_js_lib_option" type="text" name="js_lib_option" maxlength="255" placeholder="ie. data-type=&quot;&quot;" value="">
+    </label>
+  </p>
+
+
+
+
+</div> <!-- /windowSettings -->
+
+<div class="windowSettings css">
+  <h3>Language</h3>
+<div class="selectCont">
+  <select name="panel_css" class="panelChoice" id="panel_css_choice" data-panel_id="id_code_css" data-panel="css">
+    
+      <option data-mime-type="text/x-scss" value="0" selected="">CSS</option>
+    
+      <option data-mime-type="text/x-scss" value="1">SCSS</option>
+    
+  </select>
+  <label for="js_lib"><i class="bts bt-angle-down"></i></label>
+</div> <!-- /selectCont -->
+
+<h3>Options</h3>
+<p id="normalize_check">
+  <label class="checkboxCont"><input type="checkbox" name="normalize_css" id="id_normalize_css"><span class="checkbox"><i class="bts bt-check"></i></span> Normalized CSS</label>
+</p>
+
+</div> <!-- /windowSettings -->
+
+        </div>
+      
+    </form>
+
+    
+
+
+
+
+    
+
+
+    
+  
+
+<span class="CodeMirror-error-tooltip"></span><div id="HW_frame_cont" style="height: 466px;"><div id="HW_frame_peak"></div><iframe id="HW_frame" style="height: 466px;"></iframe></div><style>#HW_badge_cont {
+  display: none;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  position: relative;
+}
+
+#HW_badge_cont.HW_visible {
+  display: block;
+}
+
+#HW_badge {
+  display: block;
+  border-radius: 20px;
+  background: #CD4B5B;
+  height: 16px;
+  width: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+#HW_badge.HW_softHidden {
+  background: #d4d4d4;
+  opacity: 1;
+  transform: scale(0.6);
+}
+
+#HW_badge.HW_hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+#HW_badge.HW_visible {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+#HW_frame_cont {
+  visibility: hidden;
+  border-radius: 4px;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  border: none;
+  position: absolute;
+  z-index: 999;
+  width: 300px;
+  height: 300px;
+  transition: height 0.3s;
+}
+
+#HW_frame_cont.HW_visible {
+  visibility: visible;
+}
+
+#HW_frame_peak {
+  width: 20px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  z-index: 888;
+  top: -10px;
+  left: 22px;
+  background: #fff;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.25);
+  transform: rotate(45deg);
+}
+
+#HW_frame_peak.HW_rightAlign {
+  left: auto;
+  right: 22px;
+}
+
+#HW_frame {
+  background: #fff;
+  border: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  z-index: 900;
+  transition: height 0.3s;
+}</style><div id="togetherjs-container" class="togetherjs">
+
+  <!-- This is the main set of buttons: -->
+  <div id="togetherjs-dock" class="togetherjs-dock-right" style="height: 321px;">
+    <div id="togetherjs-dock-anchor" title="Move the dock">
+      <span id="togetherjs-dock-anchor-horizontal">
+        <img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/icn-handle-circle%402x_.png" alt="drag">
+      </span>
+      <span id="togetherjs-dock-anchor-vertical">
+        <img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/icn-handle-circle@2x_.png" alt="drag">
+      </span>
+    </div>
+    <div id="togetherjs-buttons">
+      <div style="display: none">
+        <button id="togetherjs-template-dock-person" class="togetherjs-button togetherjs-dock-person">
+          <div class="togetherjs-tooltip togetherjs-dock-person-tooltip">
+            <span class="togetherjs-person-name"></span>
+            <span class="togetherjs-person-tooltip-arrow-r"></span>
+          </div>
+          <div class="togetherjs-person togetherjs-person-status-overlay"><div class="togetherjs-person-avatar-swatch"></div></div>
+        </button>
+      </div>
+      <button id="togetherjs-profile-button" class="togetherjs-button" title="This is you">
+        <div class="togetherjs-person togetherjs-person-self" title="" style="border-color: rgb(162, 169, 72); background-image: url(cb21b90a-840f-4bff-a575-6fda5a2e1429.png);"><div class="togetherjs-person-avatar-swatch" style="border-top-color: rgb(162, 169, 72); border-right-color: rgb(162, 169, 72);"></div></div>
+        <div id="togetherjs-profile-arrow"></div>
+      </button>
+      <button id="togetherjs-share-button" class="togetherjs-button" title="Add a friend"></button>
+      <button id="togetherjs-audio-button" class="togetherjs-button" title="Turn on microphone">
+        <span id="togetherjs-audio-unavailable" class="togetherjs-audio-set" data-toggles=".togetherjs-audio-set" style="display: none;">
+        </span>
+        <span id="togetherjs-audio-ready" class="togetherjs-audio-set" data-toggles=".togetherjs-audio-set" style="">
+        </span>
+        <span id="togetherjs-audio-outgoing" class="togetherjs-audio-set" data-toggles=".togetherjs-audio-set" style="display: none">
+        </span>
+        <span id="togetherjs-audio-incoming" class="togetherjs-audio-set" data-toggles=".togetherjs-audio-set" style="display: none">
+        </span>
+        <span id="togetherjs-audio-active" class="togetherjs-audio-set" data-toggles=".togetherjs-audio-set" style="display: none">
+        </span>
+        <span id="togetherjs-audio-muted" class="togetherjs-audio-set" data-toggles=".togetherjs-audio-set" style="display: none">
+        </span>
+        <span id="togetherjs-audio-error" class="togetherjs-audio-set" data-toggles=".togetherjs-audio-set" style="display: none">
+        </span>
+      </button>
+      <button id="togetherjs-chat-button" class="togetherjs-button" title="Chat"></button>
+      <div id="togetherjs-dock-participants"><button class="togetherjs-button togetherjs-dock-person" id="togetherjs-dock-element-oK67mTRK1s_7fiwMN6OtU">
+          <div class="togetherjs-tooltip togetherjs-dock-person-tooltip">
+            <span class="togetherjs-person-name togetherjs-person-name-oK67mTRK1s_7fiwMN6OtU">Friendly Fox</span>
+            <span class="togetherjs-person-tooltip-arrow-r"></span>
+          </div>
+          <div class="togetherjs-person togetherjs-person-status-overlay togetherjs-person-oK67mTRK1s_7fiwMN6OtU" title="Friendly Fox" style="border-color: rgb(205, 104, 28); background-image: url(eadcca00-af23-4277-b1f9-da7fe9468701.png);"><div class="togetherjs-person-avatar-swatch" style="border-top-color: rgb(205, 104, 28); border-right-color: rgb(205, 104, 28);"></div></div>
+        </button></div>
+    </div>
+  </div>
+
+  <!-- The window for editing the avatar: -->
+  <div id="togetherjs-avatar-edit" class="togetherjs-modal" style="display: none">
+    <header> Update avatar <button class="togetherjs-close"></button></header>
+    <section>
+      <div class="togetherjs-avatar-preview togetherjs-person togetherjs-person-self" title="" style="border-color: rgb(162, 169, 72); background-image: url(81f17ee3-bbe3-4c9c-aeb6-3c809c01afbb.png);"><div class="togetherjs-person-avatar-swatch" style="border-top-color: rgb(162, 169, 72); border-right-color: rgb(162, 169, 72);"></div></div>
+      <div id="togetherjs-avatar-buttons">
+        <input type="file" class="togetherjs-upload-avatar">
+        <!--<button id="togetherjs-upload-avatar" class="togetherjs-primary">Upload a picture</button>-->
+        <!--<button id="togetherjs-camera-avatar" class="togetherjs-default">Take a picture</button>-->
+      </div>
+    </section>
+    <section class="togetherjs-buttons">
+      <button class="togetherjs-cancel togetherjs-dismiss">Cancel</button>
+      <span class="togetherjs-alt-text">or</span>
+      <button class="togetherjs-avatar-save togetherjs-primary" disabled="">Save</button>
+    </section>
+  </div>
+
+  <!-- The window for sharing the link: -->
+  <div id="togetherjs-share" class="togetherjs-window" data-bind-to="#togetherjs-share-button" style="display: none">
+    <header> Invite a friend <button class="togetherjs-close"></button></header>
+    <section>
+      <div class="togetherjs-not-mobile">
+        <p>Copy and paste this link over IM or email:</p>
+        <input type="text" class="togetherjs-share-link">
+      </div>
+      <div class="togetherjs-only-mobile">
+        <p>Copy and paste this link over IM or email:</p>
+        <input type="text" class="togetherjs-share-link">
+        <!-- <a class="togetherjs-share-link" href="#">Press your thumb here.</a> -->
+      </div>
+    </section>
+  </div>
+
+  <!-- Participant Full List view template: -->
+  <div id="togetherjs-participantlist" class="togetherjs-window" data-bind-to="#togetherjs-participantlist-button" style="display: none">
+    <header> Participants <button class="togetherjs-close"></button></header>
+    <section>
+      <div class="togetherjs-not-mobile">
+        <ul>
+          <li id="togetherjs-participant-item">
+            <img class="togetherjs-person togetherjs-person-small" src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/btn-menu-change-avatar_.png">
+            <span class="tj-name togetherjs-person-name">Useronewith alongname</span>
+            <span class="tj-status">●</span>
+            <p class="tj-urllocation">Currently at: <a class="togetherjs-person-url togetherjs-person-url-title" href="">http://www.location.comwww.location.comwww.location.comasdfsafd</a></p>
+            <p class="tj-follow">Follow:
+              <label class="togetherjs-follow-question" for="togetherjs-person-status-follow">
+                <input type="checkbox" id="togetherjs-person-status-follow">
+              </label>
+            </p>
+            <section class="togetherjs-buttons">
+              <!-- Displayed when the peer is at a different URL: -->
+              <div class="togetherjs-different-url">
+                <a class="togetherjs-nudge togetherjs-default tj-btn-sm">Nudge them</a>
+                <a href="https://jsfiddle.net/2mhednof/" class="togetherjs-follow togetherjs-person-url togetherjs-primary tj-btn-sm" target="_blank">Join them</a>
+              </div>
+              <!-- Displayed when the peer is at your same URL: -->
+              <div class="togetherjs-same-url" style="display: none">
+                <span class="togetherjs-person-name"></span> is on the same page as you.
+              </div>
+            </section>
+          </li>
+        </ul>
+    </div></section>
+  </div>
+
+  <!-- Participant detail template: -->
+  <div id="togetherjs-template-participant-window" class="togetherjs-window" style="display: none">
+    <header><div class="togetherjs-person togetherjs-person-small"><div class="togetherjs-person-avatar-swatch"></div></div><span class="togetherjs-person-name"></span><button class="togetherjs-close"></button></header>
+
+    <section class="togetherjs-participant-window-main">
+      <p class="togetherjs-participant-window-row"><strong>Role:</strong>
+        <span class="togetherjs-person-role"></span>
+      </p>
+
+      <p class="togetherjs-participant-window-row"><strong>Currently at:</strong>
+        <a class="togetherjs-person-url togetherjs-person-url-title"></a>
+      </p>
+
+      <p class="togetherjs-participant-window-row"><strong>Status:</strong>
+        <span class="togetherjs-person-status"></span>
+      </p>
+
+      <p class="togetherjs-participant-window-row"><strong class="togetherjs-float-left">Follow this participant:</strong>
+        <label class="togetherjs-follow-question togetherjs-float-left" for="togetherjs-person-status-follow">
+          <input type="checkbox" id="togetherjs-person-status-follow">
+        </label>
+        <span class="togetherjs-clear"></span>
+      </p>
+
+    </section>
+
+    <section class="togetherjs-buttons">
+      <!-- Displayed when the peer is at a different URL: -->
+      <div class="togetherjs-different-url">
+        <a class="togetherjs-nudge togetherjs-default">Nudge them</a>
+        <a href="https://jsfiddle.net/2mhednof/" class="togetherjs-follow togetherjs-person-url togetherjs-primary" target="_blank">Join them</a>
+      </div>
+      <!-- Displayed when the peer is at your same URL: -->
+      <div class="togetherjs-same-url" style="display: none">
+        <span class="togetherjs-person-name"></span> is on the same page as you.
+      </div>
+    </section>
+  </div>
+
+  <!-- The chat screen: -->
+  <div id="togetherjs-chat" class="togetherjs-window" data-bind-to="#togetherjs-chat-button" style="display: none">
+    <header> Chat <button class="togetherjs-close"></button></header>
+    <section class="togetherjs-subtitle">
+      <div id="togetherjs-chat-participants" data-toggles="#togetherjs-chat-no-participants" style="">
+        <span id="togetherjs-chat-participant-list">Friendly Fox</span>
+        &amp; You
+      </div>
+      <div id="togetherjs-chat-no-participants" data-toggles="#togetherjs-chat-participants" style="display: none;">
+        No one else is here.
+      </div>
+    </section>
+
+    <div style="display: none">
+
+      <!-- Template for one message: -->
+      <div id="togetherjs-template-chat-message" class="togetherjs-chat-item togetherjs-chat-message">
+        <div class="togetherjs-person"><div class="togetherjs-person-avatar-swatch"></div></div>
+        <div class="togetherjs-timestamp"><span class="togetherjs-time">HH:MM</span> <span class="togetherjs-ampm">AM/PM</span></div>
+        <div class="togetherjs-person-name-abbrev"></div>
+        <div class="togetherjs-chat-content togetherjs-sub-content"></div>
+      </div>
+
+      <!-- Template for when a person leaves: -->
+      <div id="togetherjs-template-chat-left" class="togetherjs-chat-item togetherjs-chat-left-item">
+        <div class="togetherjs-person"><div class="togetherjs-person-avatar-swatch"></div></div>
+        <div class="togetherjs-ifnot-declinedJoin">
+          <div class="togetherjs-inline-text"><span class="togetherjs-person-name"></span> left the session.</div>
+        </div>
+        <div class="togetherjs-if-declinedJoin">
+          <div class="togetherjs-inline-text"><span class="togetherjs-person-name"></span> declined to join the session.</div>
+        </div>
+        <div class="togetherjs-clear"></div>
+      </div>
+
+      <!-- Template when a person joins the session: -->
+      <div id="togetherjs-template-chat-joined" class="togetherjs-chat-item togetherjs-chat-join-item">
+        <div class="togetherjs-person"><div class="togetherjs-person-avatar-swatch"></div></div>
+        <div class="togetherjs-inline-text"><span class="togetherjs-person-name"></span> joined the session.</div>
+        <div class="togetherjs-clear"></div>
+      </div>
+
+      <!-- Template for system-derived messages: -->
+      <div id="togetherjs-template-chat-system" class="togetherjs-chat-item">
+        <span class="togetherjs-chat-content togetherjs-sub-content"></span>
+      </div>
+
+      <!-- Template when a person joins the session: -->
+      <!-- <div id="togetherjs-template-chat-joined" class="togetherjs-chat-item togetherjs-chat-join-item">
+        <div class="togetherjs-person"></div>
+        <div class="togetherjs-inline-text"><span class="togetherjs-person-name"></span> joined the session.</div>
+        <div class="togetherjs-clear"></div>
+      </div> -->
+
+      <!-- Template for when someone goes to a new URL: -->
+      <div id="togetherjs-template-url-change" class="togetherjs-chat-item togetherjs-chat-url-change">
+        <div class="togetherjs-person"><div class="togetherjs-person-avatar-swatch"></div></div>
+        <div class="togetherjs-inline-text">
+          <div class="togetherjs-if-sameUrl">
+            <span class="togetherjs-person-name"></span>
+            is on the same page as you.
+          </div>
+          <div class="togetherjs-ifnot-sameUrl">
+            <span class="togetherjs-person-name"></span>
+            has gone to: <a href="https://jsfiddle.net/2mhednof/" class="togetherjs-person-url togetherjs-person-url-title" target="_blank"></a>
+            <section class="togetherjs-buttons togetherjs-buttons-notification-diff-url">
+              <!-- Displayed when the peer is at a different URL: -->
+              <div class="togetherjs-different-url togetherjs-notification-diff-url">
+                <a class="togetherjs-nudge togetherjs-default">Nudge them</a>
+                <a href="https://jsfiddle.net/2mhednof/" class="togetherjs-follow togetherjs-person-url togetherjs-primary" target="_blank">Join them</a>
+              </div>
+            </section>
+
+            <!-- <div>
+              <a class="togetherjs-nudge togetherjs-secondary">Nudge them</a>
+              <a href="" class="togetherjs-person-url togetherjs-follow togetherjs-primary">Join them</a>
+            </div> -->
+
+          </div>
+        </div>
+        <div class="togetherjs-clear"></div>
+      </div>
+    </div>
+
+    <section id="togetherjs-chat-messages">
+      <!-- FIX ME// need to have some dialogue that says something like - There are no chats yet! -->
+    <div class="togetherjs-chat-item togetherjs-chat-message" data-person="oK67mTRK1s.7fiwMN6OtU" data-date="1461199853215" data-message-id="oK67mTRK1s.7fiwMN6OtU-1461199853109" id="togetherjs-chat-oK67mTRK1s_7fiwMN6OtU-1461199853109">
+        <div class="togetherjs-person togetherjs-person-oK67mTRK1s_7fiwMN6OtU" title="Friendly Fox" style="border-color: rgb(205, 104, 28); background-image: url(14edd81c-cdbc-4b87-b1c0-2251c469ed12.png);"><div class="togetherjs-person-avatar-swatch" style="border-top-color: rgb(205, 104, 28); border-right-color: rgb(205, 104, 28);"></div></div>
+        <div class="togetherjs-timestamp"><span class="togetherjs-time">5:50</span> <span class="togetherjs-ampm">PM</span></div>
+        <div class="togetherjs-person-name-abbrev togetherjs-person-name-abbrev-oK67mTRK1s_7fiwMN6OtU">Friendly Fox</div>
+        <div class="togetherjs-chat-content">hey! </div>
+      </div></section>
+    <section id="togetherjs-chat-input-box">
+      <textarea id="togetherjs-chat-input" placeholder="Type your message here"></textarea>
+    </section>
+  </div>
+
+  <!-- this is a kind of warning popped up when you (successfully) start RTC: -->
+  <div id="togetherjs-rtc-info" class="togetherjs-window" data-bind-to="#togetherjs-audio-button" style="display: none">
+
+    <header> Audio Chat <button class="togetherjs-close"></button></header>
+    <section>
+      <p>
+        Activate your <strong>browser microphone</strong> near your URL bar above.
+      </p>
+      <p>
+        Talking on your microphone through your web browser is an experimental feature.
+      </p>
+      <p>
+        Read more about Audio Chat <a href="https://github.com/mozilla/togetherjs/wiki/About-Audio-Chat-and-WebRTC" target="_blank">here</a>.
+      </p>
+    </section>
+
+    <section class="togetherjs-buttons">
+      <label for="togetherjs-rtc-info-dismiss" style="display: inline;">
+        <input class="togetherjs-dont-show-again" id="togetherjs-rtc-info-dismiss" type="checkbox">
+        Don't show again.
+      </label>
+      <button class="togetherjs-default togetherjs-dismiss" type="button">Close</button>
+    </section>
+  </div>
+
+  <!-- this is popped up when you hit the audio button, but RTC isn't
+  supported: -->
+  <div id="togetherjs-rtc-not-supported" class="togetherjs-window" data-bind-to="#togetherjs-audio-button" style="display: none">
+    <header> Audio Chat <button class="togetherjs-close"></button></header>
+
+    <section>
+      <p>Audio chat requires you to use a <a href="https://github.com/mozilla/togetherjs/wiki/About-Audio-Chat-and-WebRTC" target="_blank">
+        newer browser
+      </a>!</p>
+      <p>
+        Live audio chat requires a newer (or different) browser than you're using.
+      </p>
+      <p>
+        See
+        <a href="https://github.com/mozilla/togetherjs/wiki/About-Audio-Chat-and-WebRTC" target="_blank">
+          this page
+        </a>
+        for more information and a list of supported browsers.
+      </p>
+    </section>
+
+    <section class="togetherjs-buttons">
+      <div class="togetherjs-rtc-dialog-btn">
+        <button class="togetherjs-default togetherjs-dismiss" type="button">Close</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- The popup when a chat message comes in and the #togetherjs-chat window isn't open -->
+  <div id="togetherjs-chat-notifier" class="togetherjs-notification" data-bind-to="#togetherjs-chat-button" style="display: none">
+    <img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/notification-togetherjs-logo_.png" class="togetherjs-notification-logo" alt="">
+    <img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/notification-btn-close_.png" class="togetherjs-notification-closebtn togetherjs-dismiss" alt="[close]">
+    <section id="togetherjs-chat-notifier-message">
+    </section>
+  </div>
+
+  <!-- The menu when you click on the profile: -->
+  <div id="togetherjs-menu" class="togetherjs-menu" style="display: none">
+    <div class="togetherjs-menu-item togetherjs-menu-disabled" id="togetherjs-menu-profile">
+      <img id="togetherjs-menu-avatar" src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/default-avatar_.png">
+      <span class="togetherjs-person-name-self" id="togetherjs-self-name-display" data-toggles="#togetherjs-menu .togetherjs-self-name">Friendly Fox</span>
+      <input class="togetherjs-self-name" type="text" data-toggles="#togetherjs-self-name-display" style="display: none" placeholder="Enter your name">
+    </div>
+    <div class="togetherjs-menu-hr-avatar"></div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-update-name"><img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/button-pencil_.png" alt=""> Update your name</div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-update-avatar"><img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/btn-menu-change-avatar_.png" alt=""> Change avatar</div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-update-color"><span class="togetherjs-person-bgcolor-self" style="background-color: rgb(162, 169, 72);"></span> Pick profile color</div>
+    <div class="togetherjs-hr"></div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-help">Help</div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-feedback">Feedback</div>
+    <div id="togetherjs-invite" style="display: none">
+      <div class="togetherjs-hr"></div>
+      <div id="togetherjs-invite-users"></div>
+      <div class="togetherjs-menu-item" id="togetherjs-menu-refresh-invite">Refresh users</div>
+      <div class="togetherjs-menu-item" id="togetherjs-menu-invite-anyone">Invite anyone</div>
+    </div>
+    <div class="togetherjs-hr"></div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-end"><img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/button-end-session_.png" alt=""> End <span class="togetherjs-tool-name">Collaboration</span></div>
+  </div>
+
+  <!-- template for one person in the invite-users list -->
+  <div style="display: none">
+    <div id="togetherjs-template-invite-user-item" class="togetherjs-menu-item">
+      <!-- FIXME: should include avatar in some way -->
+      <span class="togetherjs-person-name"></span>
+    </div>
+  </div>
+
+  <!-- A window version of #togetherjs-menu, for use on mobile -->
+  <div id="togetherjs-menu-window" class="togetherjs-window" style="display: none">
+    <header>Settings and Profile<button class="togetherjs-close"></button></header>
+    <section>
+    <div class="togetherjs-menu-item">
+      <img class="togetherjs-menu-avatar">
+      <span class="togetherjs-person-name-self" id="togetherjs-self-name-display"></span>
+    </div>
+    <div class="togetherjs-menu-hr-avatar"></div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-update-name-button"><img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/button-pencil_.png" alt=""> Update your name</div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-update-avatar-button"><img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/btn-menu-change-avatar_.png" alt=""> Change avatar</div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-update-color-button"><span class="togetherjs-person-bgcolor-self" style="background-color: rgb(162, 169, 72);"></span> Pick profile color</div>
+    <div class="togetherjs-hr"></div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-help-button">Help</div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-feedback-button">Feedback</div>
+    <div class="togetherjs-hr"></div>
+    <div class="togetherjs-menu-item" id="togetherjs-menu-end-button"><img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/button-end-session_.png" alt=""> End <span class="togetherjs-tool-name">Collaboration</span></div>
+    </section>
+    <section class="togetherjs-buttons">
+      <button class="togetherjs-dismiss togetherjs-primary">OK</button>
+    </section>
+  </div>
+
+  <!-- The name editor, for use on mobile -->
+  <div id="togetherjs-edit-name-window" class="togetherjs-window" style="display: none">
+    <header>Update Name<button class="togetherjs-close"></button></header>
+    <section>
+      <div>
+        <input class="togetherjs-self-name" type="text" placeholder="Enter your name">
+      </div>
+    </section>
+    <section class="togetherjs-buttons">
+      <button class="togetherjs-dismiss togetherjs-primary">OK</button>
+    </section>
+  </div>
+
+  <div class="togetherjs-menu" id="togetherjs-pick-color" style="display: none">
+    <div class="togetherjs-triangle-up"><img src="../tests/test_resources/jsfiddle_net/togetherjs.com/togetherjs/images/icn-triangle-up_.png"></div>
+    <div style="display: none">
+      <div id="togetherjs-template-swatch" class="togetherjs-swatch">
+      </div>
+    </div>
+  <div class="togetherjs-swatch" data-color="#8A2BE2" style="border-color: rgb(112, 26, 193); background-color: rgb(138, 43, 226);">
+      </div><div class="togetherjs-swatch" data-color="#7FFF00" style="border-color: rgb(102, 204, 0); background-color: rgb(127, 255, 0);">
+      </div><div class="togetherjs-swatch" data-color="#DC143C" style="border-color: rgb(173, 16, 47); background-color: rgb(220, 20, 60);">
+      </div><div class="togetherjs-swatch" data-color="#00FFFF" style="border-color: rgb(0, 204, 204); background-color: rgb(0, 255, 255);">
+      </div><div class="togetherjs-swatch" data-color="#8FBC8F" style="border-color: rgb(111, 169, 111); background-color: rgb(143, 188, 143);">
+      </div><div class="togetherjs-swatch" data-color="#FF8C00" style="border-color: rgb(204, 112, 0); background-color: rgb(255, 140, 0);">
+      </div><div class="togetherjs-swatch" data-color="#FF00FF" style="border-color: rgb(204, 0, 204); background-color: rgb(255, 0, 255);">
+      </div><div class="togetherjs-swatch" data-color="#FFD700" style="border-color: rgb(204, 174, 0); background-color: rgb(255, 215, 0);">
+      </div><div class="togetherjs-swatch" data-color="#F08080" style="border-color: rgb(235, 81, 81); background-color: rgb(240, 128, 128);">
+      </div><div class="togetherjs-swatch" data-color="#90EE90" style="border-color: rgb(100, 231, 100); background-color: rgb(144, 238, 144);">
+      </div><div class="togetherjs-swatch" data-color="#FF6347" style="border-color: rgb(255, 55, 20); background-color: rgb(255, 99, 71);">
+      </div></div>
+
+  <!-- Invisible elements that handle the RTC audio: -->
+  <audio id="togetherjs-audio-element"></audio>
+  <audio id="togetherjs-local-audio" muted="true" volume="0.3"></audio>
+  <audio id="togetherjs-notification" src="https://togetherjs.com/togetherjs/images/notification.ogg"></audio>
+
+  <!-- The intro screen for someone who joins a session the first time: -->
+  <div id="togetherjs-intro" class="togetherjs-modal" style="display: none">
+    <header>Join <span class="togetherjs-tool-name">Collaboration</span> session?<button class="togetherjs-close"></button></header>
+    <section>
+      <p>Your friend has asked you to join their <a href="https://togetherjs.com/" target="_blank"><span class="togetherjs-tool-name">Collaboration</span></a> browser session to collaborate in real-time!</p>
+
+      <p>Would you like to join their session?</p>
+    </section>
+
+    <section class="togetherjs-buttons">
+      <button class="togetherjs-destructive togetherjs-modal-dont-join">No, don't join</button>
+      <button class="togetherjs-primary togetherjs-dismiss">Yes, join session</button>
+    </section>
+  </div>
+
+  <!-- Shown when a web browser is completely incapable of running TogetherJS: -->
+  <div id="togetherjs-browser-broken" class="togetherjs-modal" style="display: none">
+    <header> Sorry <button class="togetherjs-close"></button></header>
+
+    <section>
+      <p>
+        We're sorry, <span class="togetherjs-tool-name">Collaboration</span> doesn't work with this browser.  Please
+        <a href="https://github.com/mozilla/togetherjs/wiki/Supported-Browsers#supported-browsers" target="_blank">upgrade
+          to a supported browser</a> to try <span class="togetherjs-tool-name">Collaboration</span>.
+      </p>
+
+      <p id="togetherjs-browser-broken-is-ie" style="display: none">
+        We need your help fixing TogetherJS on Internet Explorer!  Here are a list of IE <a href="https://github.com/mozilla/togetherjs/issues?labels=IE&amp;milestone=&amp;page=1&amp;state=open" target="_blank">GitHub issues</a> we need fixed that you can work on.
+        Internet Explorer <a href="https://github.com/mozilla/togetherjs/wiki/Supported-Browsers#internet-explorer" target="_blank">is
+          currently not supported</a>.  If you do want to try out TogetherJS, we'd suggest using Firefox or Chrome.
+      </p>
+    </section>
+
+    <section class="togetherjs-buttons">
+      <button class="togetherjs-dismiss togetherjs-primary">End <span class="togetherjs-tool-name">Collaboration</span></button>
+    </section>
+
+  </div>
+
+  <!-- Shown when the browser has WebSockets, but is IE (i.e., IE10) -->
+  <div id="togetherjs-browser-unsupported" class="togetherjs-modal" style="display: none">
+    <header> Unsupported Browser <button class="togetherjs-close"></button></header>
+
+    <section>
+      <p>
+        We need your help fixing TogetherJS on Internet Explorer!  Here are a list of IE <a href="https://github.com/mozilla/togetherjs/issues?labels=IE&amp;milestone=&amp;page=1&amp;state=open" target="_blank">GitHub issues</a> we need fixed that you can work on.
+        Internet Explorer <a href="https://github.com/mozilla/togetherjs/wiki/Supported-Browsers#internet-explorer" target="_blank">is not supported</a>
+        at this time.  While we may add support later, adding support is
+        not currently on our roadmap.  If you do want to try out TogetherJS, we'd suggest using Firefox or Chrome.
+      </p>
+
+      <p>You can continue to try to use <span class="togetherjs-tool-name">Collaboration</span>, but you are likely to hit
+        lots of bugs.  So be warned.</p>
+
+    </section>
+
+    <section class="togetherjs-buttons">
+      <button class="togetherjs-dismiss togetherjs-primary">End <span class="togetherjs-tool-name">Collaboration</span></button>
+      <button class="togetherjs-dismiss togetherjs-secondary togetherjs-browser-unsupported-anyway">Try <span class="togetherjs-tool-name">Collaboration</span> Anyway</button>
+    </section>
+
+  </div>
+
+  <div id="togetherjs-confirm-end" class="togetherjs-modal" style="display: none">
+    <header> End session? <button class="togetherjs-close"></button></header>
+    <section>
+      <p>
+        Are you sure you'd like to end your <span class="togetherjs-tool-name">Collaboration</span> session?
+      </p>
+    </section>
+    <section class="togetherjs-buttons">
+      <button class="togetherjs-cancel togetherjs-dismiss">Cancel</button>
+      <span class="togetherjs-alt-text">or</span>
+      <button id="togetherjs-end-session" class="togetherjs-destructive">End session</button>
+    </section>
+  </div>
+
+  <div id="togetherjs-feedback-form" class="togetherjs-modal" style="display: none;">
+    <header> Feedback <button class="togetherjs-close"></button></header>
+    <iframe width="400" height="300" frameborder="0" marginheight="0" marginwidth="0">Loading form...</iframe>
+    <!-- <p><button class="togetherjs-modal-close">Close</button></p> -->
+  </div>
+
+  <div style="display: none">
+    <!-- This is when you join a session and the other person has already changed to another URL: -->
+    <div id="togetherjs-template-url-change" class="togetherjs-modal">
+      <header> Following to new URL... <button class="togetherjs-close"></button></header>
+      <section>
+        <div class="togetherjs-person"><div class="togetherjs-person-avatar-swatch"></div></div>
+        Following
+        <span class="togetherjs-person-name"></span>
+        to <a href="" class="togetherjs-person-url togetherjs-person-url-title"></a>
+      </section>
+    </div>
+
+    <!-- This is when someone invites you to their session: -->
+    <div id="togetherjs-template-invite" class="togetherjs-chat-item">
+      <div class="togetherjs-person"><div class="togetherjs-person-avatar-swatch"></div></div>
+      <div>
+        <span class="togetherjs-person-name"></span>
+        has invited <strong class="togetherjs-if-forEveryone">anyone</strong>
+        <strong class="togetherjs-ifnot-forEveryone">you</strong>
+        to <a href="" data-togetherjs-subattr-href="href" class="togetherjs-sub-hrefTitle" target="_blank"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- The pointer at the side of a window: -->
+  <div id="togetherjs-window-pointer-right" style="display: none"></div>
+  <div id="togetherjs-window-pointer-left" style="display: none"></div>
+
+  <!-- The element that overlaps the background of the page during a modal dialog: -->
+  <div id="togetherjs-modal-background" style="display: none"></div>
+
+  <!-- Some miscellaneous templates -->
+  <div style="display: none">
+
+    <!-- This is the cursor: -->
+    <div id="togetherjs-template-cursor" class="togetherjs-cursor togetherjs">
+      <!-- Note: images/cursor.svg is a copy of this (for editing): -->
+      <!-- crossbrowser svg dropshadow http://demosthenes.info/blog/600/Creating-a-True-CrossBrowser-Drop-Shadow- -->
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="22.838px" viewBox="96.344 146.692 15 22.838" enable-background="new 96.344 146.692 15 22.838" xml:space="preserve">
+      <path fill="#231F20" d="M98.984,146.692c2.167,1.322,1.624,6.067,3.773,7.298c-0.072-0.488,2.512-0.931,3.097,0
+      	c0.503,0.337,1.104-0.846,2.653,0.443c0.555,0.593,3.258,2.179,1.001,8.851c-0.446,1.316,2.854,0.135,1.169,2.619
+      	c-3.748,5.521-9.455,2.787-9.062,1.746c1.06-2.809-6.889-4.885-4.97-9.896c0.834-2.559,2.898,0.653,2.923,0.29
+      	c-0.434-1.07-2.608-5.541-2.923-6.985C96.587,150.793,95.342,147.033,98.984,146.692z"></path>
+      </svg>
+      <!-- <img class="togetherjs-cursor-img" src="https://togetherjs.com/togetherjs/images/cursor.svg"> -->
+      <span class="togetherjs-cursor-container">
+        <span class="togetherjs-cursor-name"></span>
+        <span style="display:none" class="togetherjs-cursor-typing" id="togetherjs-cursor-typebox">
+          <span class="togetherjs-typing-ellipse-one">●</span><span class="togetherjs-typing-ellipse-two">●</span><span class="togetherjs-typing-ellipse-three">●</span>
+        </span>
+        <!-- Displayed when the cursor is below the screen: -->
+        <span class="togetherjs-cursor-down">
+
+        </span>
+        <!-- Displayed when the cursor is above the screen: -->
+        <span class="togetherjs-cursor-up">
+
+        </span>
+      </span>
+    </div>
+
+    <!-- This is the element that goes around focused form elements: -->
+    <div id="togetherjs-template-focus">
+      <div class="togetherjs-focus togetherjs-person-bordercolor"></div>
+    </div>
+
+    <!-- This is a click: -->
+    <div id="togetherjs-template-click" class="togetherjs-click togetherjs">
+    </div>
+  </div>
+<div class="togetherjs-window" style="display: none">
+    <header><div class="togetherjs-person togetherjs-person-small togetherjs-person-oK67mTRK1s_7fiwMN6OtU" title="Friendly Fox" style="border-color: rgb(205, 104, 28); background-image: url(70fbac5d-c506-40c5-8839-3899cef92934.png);"><div class="togetherjs-person-avatar-swatch" style="border-top-color: rgb(205, 104, 28); border-right-color: rgb(205, 104, 28);"></div></div><span class="togetherjs-person-name togetherjs-person-name-oK67mTRK1s_7fiwMN6OtU">Friendly Fox</span><button class="togetherjs-close"></button></header>
+
+    <section class="togetherjs-participant-window-main">
+      <p class="togetherjs-participant-window-row"><strong>Role:</strong>
+        <span class="togetherjs-person-role togetherjs-person-role-oK67mTRK1s_7fiwMN6OtU">Participant</span>
+      </p>
+
+      <p class="togetherjs-participant-window-row"><strong>Currently at:</strong>
+        <a class="togetherjs-person-url togetherjs-person-url-title togetherjs-person-url-oK67mTRK1s_7fiwMN6OtU togetherjs-person-url-title-oK67mTRK1s_7fiwMN6OtU" href="https://jsfiddle.net/" target="_blank">Create a new fiddle - JSFiddle (/)</a>
+      </p>
+
+      <p class="togetherjs-participant-window-row"><strong>Status:</strong>
+        <span class="togetherjs-person-status togetherjs-person-status-oK67mTRK1s_7fiwMN6OtU">Active</span>
+      </p>
+
+      <p class="togetherjs-participant-window-row"><strong class="togetherjs-float-left">Follow this participant:</strong>
+        <label class="togetherjs-follow-question togetherjs-float-left" for="togetherjs-person-status-follow-oK67mTRK1s_7fiwMN6OtU">
+          <input type="checkbox" id="togetherjs-person-status-follow-oK67mTRK1s_7fiwMN6OtU">
+        </label>
+        <span class="togetherjs-clear"></span>
+      </p>
+
+    </section>
+
+    <section class="togetherjs-buttons">
+      <!-- Displayed when the peer is at a different URL: -->
+      <div class="togetherjs-different-url" style="display: none;">
+        <a class="togetherjs-nudge togetherjs-default">Nudge them</a>
+        <a href="https://jsfiddle.net/" class="togetherjs-follow togetherjs-person-url togetherjs-primary togetherjs-person-url-oK67mTRK1s_7fiwMN6OtU" target="_blank">Join them</a>
+      </div>
+      <!-- Displayed when the peer is at your same URL: -->
+      <div class="togetherjs-same-url" style="">
+        <span class="togetherjs-person-name togetherjs-person-name-oK67mTRK1s_7fiwMN6OtU">Friendly Fox</span> is on the same page as you.
+      </div>
+    </section>
+  </div></div><div class="togetherjs-cursor togetherjs togetherjs-scrolled-normal" style="color: rgb(205, 104, 28); opacity: 1; top: 332.75px; left: 502px;">
+      <!-- Note: images/cursor.svg is a copy of this (for editing): -->
+      <!-- crossbrowser svg dropshadow http://demosthenes.info/blog/600/Creating-a-True-CrossBrowser-Drop-Shadow- -->
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="22.838px" viewBox="96.344 146.692 15 22.838" enable-background="new 96.344 146.692 15 22.838" xml:space="preserve" style="opacity: 0;">
+      <path fill="#cd681c" d="M98.984,146.692c2.167,1.322,1.624,6.067,3.773,7.298c-0.072-0.488,2.512-0.931,3.097,0
+      	c0.503,0.337,1.104-0.846,2.653,0.443c0.555,0.593,3.258,2.179,1.001,8.851c-0.446,1.316,2.854,0.135,1.169,2.619
+      	c-3.748,5.521-9.455,2.787-9.062,1.746c1.06-2.809-6.889-4.885-4.97-9.896c0.834-2.559,2.898,0.653,2.923,0.29
+      	c-0.434-1.07-2.608-5.541-2.923-6.985C96.587,150.793,95.342,147.033,98.984,146.692z"></path>
+      </svg>
+      <!-- <img class="togetherjs-cursor-img" src="https://togetherjs.com/togetherjs/images/cursor.svg"> -->
+      <span class="togetherjs-cursor-container" style="color: rgb(238, 238, 238); width: 0px; height: 0px; padding: 0px; margin: 0px; display: inline-block; opacity: 0; background-color: rgb(205, 104, 28);">
+        <span class="togetherjs-cursor-name">Friendly Fox</span>
+        <span style="display:none" class="togetherjs-cursor-typing" id="togetherjs-cursor-typebox">
+          <span class="togetherjs-typing-ellipse-one">●</span><span class="togetherjs-typing-ellipse-two">●</span><span class="togetherjs-typing-ellipse-three">●</span>
+        </span>
+        <!-- Displayed when the cursor is below the screen: -->
+        <span class="togetherjs-cursor-down">
+
+        </span>
+        <!-- Displayed when the cursor is above the screen: -->
+        <span class="togetherjs-cursor-up">
+
+        </span>
+      </span>
+    </div><div class="togetherjs-click togetherjs togetherjs-clicking" style="top: 234px; left: 580px; border-color: rgb(162, 169, 72);">
+    </div><script>(function addContentToIframe() { 
+                    if (typeof classadooIframesLoading === 'undefined') {
+                        classadooIframesLoading = [true];
+                    } else {
+                        classadooIframesLoading.push(true);
+                    }
+
+                    var iframe = document.querySelector('[data-test-id="0"]')
+                    iframe.onload = function() {
+                        var iDoc = iframe.contentWindow.document
+                        iDoc.open();
+                        iDoc.writeln("<html><head></head><body></body></html>");
+                        iDoc.close();     
+                        classadooIframesLoading.pop();                   
+                    }
+                    iframe.src = 'about:blank';   
+                })()</script></body></html>
