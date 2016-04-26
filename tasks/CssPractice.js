@@ -3,7 +3,7 @@ var IframeManager = require("../helpers/IframeManager.js");
 var $ = require("jquery")
 
 AddStyleTag = new function() {	
-	this.description = 'Now add a <style></style> tag to your site. We\'ll put CSS in here next.',	
+	this.description = 'Now add a style tag to your site. We\'ll put CSS in here next.',	
 	this.location = "scratchpad.io"
 	this.name = "AddStyleTag"
 	

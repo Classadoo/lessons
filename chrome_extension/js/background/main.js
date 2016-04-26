@@ -8,6 +8,8 @@ while (!chrome.runtime.getPlatformInfo) {
   // just putting this in here to make sure everything is ready before moving on    
 }
 
+var m = new ClassManager()
+
 console.log("adding the listener");
 chrome.runtime.onMessage.addListener(
    function(request, sender, sendResponse) {   		
@@ -40,7 +42,7 @@ chrome.runtime.onMessage.addListener(
             		var $html = $(toolbarDoc);
 
 			    	addTagsToHead($html, [bootstrapCss, toolbarCss])
-			        sendResponse({html: toolbarDoc.outerHTML, open: toolbarOpen, startingTask: currentTask});
+			        sendResponse({html: toolbarDoc.outerHTML, open: toolbarOpen, startingTask: currentTask, startingState: m.getState});
 			    }
 			});
 

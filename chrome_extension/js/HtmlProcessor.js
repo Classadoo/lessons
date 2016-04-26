@@ -95,8 +95,7 @@ var HtmlProcessor = function(siteInfo) {
 
     // generates scripts which will fill content in an iframe without a source on page load. 
     function getIframeFillerScripts() {        
-        var frames = $("iframe:not([src]):not(#classadoo-test-frame)") 
-        debugger;               
+        var frames = $("iframe:not([src]):not(#classadoo-test-frame)")         
          return frames.map(function(i, iframe){                        
             if (iframe.contentWindow) {                
                 var $iframe = $(iframe);            

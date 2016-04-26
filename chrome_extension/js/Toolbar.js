@@ -4,6 +4,7 @@ Toolbar = function(parent, html, startsOpen, startingTask) {
 	var tasks = false;
 	var taskInput;
 	var latestTaskButton;
+	var syncButton;
 
 	var CSS = {
 		frame: {
@@ -31,8 +32,16 @@ Toolbar = function(parent, html, startsOpen, startingTask) {
 	i.runWhenLoaded(function() {
 		taskInput = i.$(".task-typeahead .typeahead")
 		latestTaskButton = i.$(".latest-task-button")
+		syncButton = i.$(".sync-button")
 
 		latestTaskButton.click(changeToLatestTask);
+		syncButton.click(function() {
+			if (state.syncing) {
+				state.setSyncing(false);
+			} else {
+				state.setSyncing(true);
+			}			
+		})
 
 		startingTask && taskInput.val(startingTask);		
 
@@ -71,8 +80,18 @@ Toolbar = function(parent, html, startsOpen, startingTask) {
 		});			
 	}
 
+	function updateSyncButton() {
+		console.log("asdfa", state.syncing)
+		if (state.syncing) {
+			syncButton.addClass("btn-danger");
+		} else {
+			syncButton.removeClass("btn-danger");
+		}		
+	}
+
 
    	openOrClose(startsOpen)
+   	respond("syncing", updateSyncButton);
 }
 
 Typeahead = function($el) {	
@@ -98,7 +117,7 @@ Typeahead = function($el) {
 		  // `states` is an array of state names defined in "The Basics"
 		  local: tasks
 		}));
-	}	
+	}		
 
 	this.setTasks = function(newList) {		
 		var source = bh(newList)		
@@ -112,7 +131,7 @@ Typeahead = function($el) {
 		  name: 'tasks',
 		  source: source
 		})
-	}	
+	}		
 }
 
 function ModifyPageForToolbar(openToolbar, $parent) {

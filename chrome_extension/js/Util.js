@@ -1,5 +1,6 @@
 Util = new function() {
   var counter = 0;
+  var self = this;
 
   this.randomize = function(arr) {
     for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
@@ -78,8 +79,23 @@ Util = new function() {
   this.objectSize = function(obj) {
     Object.keys(obj).length
   }
+  
+  this.objectDiff = function(oldObj, newObj) {
+    var oldObj = oldObj || {}
+    var newObj = newObj || {}
 
-  this.objectEq = function(obj1, obj2) {
+    var diffObj = {}
+    var allKeys = Object.keys(oldObj).concat(Object.keys(newObj));
+    allKeys.forEach(function(key) {
+      if (!self.equivalent(oldObj[key], newObj[key])) {    
+        diffObj[key] = newObj[key]
+      } 
+    })
+
+    return diffObj  
+  }
+
+  this.objectEq = function(obj1, obj2) {    
     var obj1 = obj1 || {}
     var obj2 = obj2 || {}
 
@@ -87,10 +103,10 @@ Util = new function() {
     var keys2 = Object.keys(obj2);
 
     var sameNumberOfKeys = keys1.length == keys2.length;
-
+    
     // return false if any of the values are different
     for (var i = 0; i < keys1.length; i++) {
-      var valuesEqual = obj1[keys1[i]] == obj2[keys1[i]];
+      var valuesEqual = self.equivalent(obj1[keys1[i]], obj2[keys1[i]]);
       if (!valuesEqual) return false
     }
 
@@ -158,9 +174,13 @@ Util = new function() {
         case '\u2029':
           return '\\u2029'
       }
-    })
+    })  
   }
 
+  this.equivalent = function(val1, val2) {
+     return (typeof val1 == typeof val2)
+          && (val1 == val2 || (typeof val2 === "object" && self.objectEq(val1, val2)))
+  }
 }()
 
 ViewUtil = new function() {
