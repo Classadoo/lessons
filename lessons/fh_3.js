@@ -9,7 +9,7 @@ __importedLesson = [
 	FavoriteImage,
 	SecondFavoriteImage,
 	ChangeFavoriteImageHeight,
-	ChangeFavoriteImageWidth
+	ChangeFavoriteImageWidth,
 
 	// // mess up a page
 	ChangePageText,
@@ -19,7 +19,7 @@ __importedLesson = [
 	AddTextToThePage,
 	FreeChangeAPage,	
 
-	// css review
+	// css
 	AddStyleTag,
 	AddCustomDiv,
 	AddIdToDiv,
