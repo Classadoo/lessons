@@ -8,7 +8,7 @@ var mkdirp = require('mkdirp');
 
 var lessonDir = "/Users/dgaynor/classadoo-lessons/samples/"
 var testDir = "../samples/"
-var lessonName = "fh_3.js"
+var lessonName = "websites_4.js"
 var testFileBase = testDir
 
 function sortNumber(a,b) {

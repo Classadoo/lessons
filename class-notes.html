@@ -1,10 +1,19 @@
-<div>
-  Jet
-</div>
+<script>
+  function change() {
+    var on = true
+    var el = document.getElementById("change-button");
+    setInterval(function(){      
+      if (on) {
+        el.style.background = "green"
+        on = false
+      } else {
+        el.style.background = "red"
+        on = true
+      }
+    }, 500)    
+  }  
+</script>
 
-<div>
-  Car
-</div>
-
-<img style="height: 500px; width: 200px" src="http://www.jfijets.com/sites/default/files/Heavy-Jet.png">
-<img src="https://www.alamo.com/alamoData/vehicle/bookingCountries/US/CARS/ECAR.doi.320.high.imageSmallSideProfileNodePath.png/1429810724063.png">
+<button id="change-button" onclick="change()">
+  Colors!
+</button>

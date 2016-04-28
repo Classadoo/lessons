@@ -4,7 +4,7 @@ var $ = require("jquery")
 ChangePageText = new function() {	
 	this.description = 'First try to change the text anywhere on the page'
 	this.hint = "right-click, inspect or inspect element",
-	this.location = "htekidsnews.com"
+	this.location = "*"
 	this.name = "ChangePageText"
 	
 	var startingText;
@@ -22,7 +22,7 @@ ChangePageText = new function() {
 ChangeImgSrc = new function() {
 	this.description = 'Now change the src for an image on the page'
 	this.hint = "right-click, inspect or inspect element",
-	this.location = "htekidsnews.com"
+	this.location = "*"
 	this.name = "ChangeImgSrc"
 	
 	var startingImgSrcs;
@@ -46,7 +46,7 @@ ChangeImgSrc = new function() {
 ChangeElementStyle = new function() {
 	this.description = 'Now change the style of an element on the page'
 	this.hint = "right-click, inspect or inspect element",
-	this.location = "htekidsnews.com"
+	this.location = "*"
 	this.name = "ChangeElementStyle"
 	
 	var starting;
