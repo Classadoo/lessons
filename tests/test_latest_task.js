@@ -65,7 +65,7 @@ function testTask(taskName, callback) {
 			var result = page.evaluate(function() {								
 				var testIndex = __importedLesson.length - 1
 				var currentTask = __importedLesson[testIndex];
-				var locationResult = RegExp(currentTask.location).test(testlocationHref)							
+				var locationResult = RegExp(currentTask.location).test(testlocationHref)											
 
 				var checkResult = currentTask.check()											
 
@@ -83,7 +83,7 @@ function testLoop() {
 		setTimeout(function() { testPrevious(results) }, 50);
 	});
 
-	function testPrevious(currentResults) {
+	function testPrevious(currentResults) {		
 		var previousTask = __importedLesson[__importedLesson.length - 2] 		
 		if (previousTask) {
 			testTask(previousTask.name, function(results) {

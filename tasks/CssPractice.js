@@ -21,7 +21,8 @@ AddCustomDiv =  new function() {
 	
 	this.check = function() {					
 		var i = new IframeManager($("#preview"));						
-		var div = i.$("div:not(:empty)");			
+		var div = H.nonEmptyTag(i.$("div"));
+
 		return div.length > 0
 	}	
 }
@@ -33,7 +34,7 @@ AddIdToDiv = new function() {
 	
 	this.check = function() {					
 		var i = new IframeManager($("#preview"));				
-		var divWithId = i.$("div:not(:empty)[id]");			
+		var divWithId = H.tagWithId(i.$("div"));
 		return divWithId.length > 0
 	}	
 }
@@ -45,7 +46,7 @@ ColorDiv = new function() {
 	
 	this.check = function() {					
 		var i = new IframeManager($("#preview"));				
-		var coloredDivs = i.$("div:not(:empty)[id]").filter(function(i, div) {			
+		var coloredDivs = H.nonEmptyTag(i.$("div")).filter(function(i, div) {			
 			return $(div).css("color") == "rgb(0, 0, 255)"
 		});		
 		return coloredDivs.length > 0
@@ -53,13 +54,13 @@ ColorDiv = new function() {
 }
 
 BackgroundDiv = new function() {	
-	this.description = 'Now use CSS to make the div\'s background red. e.g. add this under color:blue : "background: red"',	
+	this.description = 'Now use CSS to make the div\'s background red. e.g. add this under color:blue, "background: red"'	
 	this.location = "scratchpad.io"
 	this.name = "BackgroundDiv"
 	
 	this.check = function() {					
 		var i = new IframeManager($("#preview"));				
-		var coloredDivs = i.$("div:not(:empty)[id]").filter(function(i, div) {			
+		var coloredDivs = H.nonEmptyTag(i.$("div")).filter(function(i, div) {			
 			return $(div).css("background-color") == "rgb(255, 0, 0)"
 		});		
 		return coloredDivs.length > 0
@@ -67,7 +68,7 @@ BackgroundDiv = new function() {
 }
 
 AddIdToImg = new function() {	
-	this.description = 'Now add any ID to the img you added earlier. e.g id="put an id here"',	
+	this.description = 'Now create an img with an ID e.g <img src="..." id="put an id here">'	
 	this.location = "scratchpad.io"
 	this.name = "AddIdToImg"
 	

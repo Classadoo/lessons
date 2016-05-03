@@ -153,7 +153,7 @@ AddArticleDiv = new function() {
 	this.check = function() {					
 		var i = new IframeManager($("#preview"));				
 		var divsWithIds = i.$("#articles");														
-		return divsWithIds.length > 1
+		return divsWithIds.length > 0
 	}	
 }
 

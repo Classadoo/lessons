@@ -6,6 +6,7 @@ Toolbar = function(parent, html, startsOpen, startingTask, syncedState, onLoaded
 	var latestTaskButton;
 	var syncButton;
 	var syncScratchButton;
+	var lockScratchButton;
 
 	var CSS = {
 		frame: {
@@ -35,6 +36,7 @@ Toolbar = function(parent, html, startsOpen, startingTask, syncedState, onLoaded
 		latestTaskButton = i.$(".latest-task-button")
 		syncButton = i.$(".sync-button")
 		syncScratchButton = i.$(".sync-scratch")
+		lockScratchButton = i.$(".lock-scratch")
 
 		latestTaskButton.click(changeToLatestTask);
 		syncButton.click(function() {
@@ -47,9 +49,20 @@ Toolbar = function(parent, html, startsOpen, startingTask, syncedState, onLoaded
 		
 		if (window.location.href.indexOf("scratchpad.io") > -1) {		
 			syncScratchButton.show();
+			lockScratchButton.show();
+
 			syncScratchButton.click(function() {
-				console.log(syncedState);
-				syncedState.updateClass({"syncingScratch": !(syncedState.classState.syncingScratch)});
+				if (syncedState.classState.syncingScratch) {					
+					syncedState.updateClass({"syncingScratch": false});
+				} else {
+					syncedState.updateStudents({"scratchPreviewShown": true});
+					syncedState.updateClass({"syncingScratch": true});
+				}
+				
+			})
+
+			lockScratchButton.click(function() {				
+				syncedState.updateClass({"lockScratch": !syncedState.classState.lockScratch});
 			})
 		}
 
@@ -109,9 +122,18 @@ Toolbar = function(parent, html, startsOpen, startingTask, syncedState, onLoaded
 		}		
 	}
 
+	function updateLockScratchButton() {
+		if (syncedState.classState.lockScratch) {
+			lockScratchButton.addClass("btn-danger");
+		} else {
+			lockScratchButton.removeClass("btn-danger");
+		}		
+	}
+
    	openOrClose(startsOpen)
    	respond("syncing", updateSyncButton);
    	respond("classSync", updateSyncScratchButton);	
+   	respond("classSync", updateLockScratchButton);	
 }
 
 Typeahead = function($el) {	

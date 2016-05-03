@@ -33,4 +33,8 @@ SyncedState = function() {
 	self.updateClass = function(props) {
 		chrome.runtime.sendMessage({updateClass: props})
 	}	
+
+	self.updateStudents = function(props) {
+		chrome.runtime.sendMessage({updateStudents: props})
+	}	
 }

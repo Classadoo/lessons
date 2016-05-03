@@ -1,10 +1,20 @@
 var H = require("../helpers/TaskHelpers.js");
 var $ = require("jquery")
 
+OpenXrayGoggles = new function() {	
+	this.description = 'Go to any webpage you want, and open X-Ray Goggles by pressing the pencil button on the right side of this toolbar'	
+	this.location = ".*"
+	this.name = "OpenXrayGoggles"
+
+	this.check = function() {			
+		return $("#webxray-is-active").length > 0
+	}	
+}
+
 ChangePageText = new function() {	
 	this.description = 'First try to change the text anywhere on the page'
 	this.hint = "right-click, inspect or inspect element",
-	this.location = "*"
+	this.location = ".*"
 	this.name = "ChangePageText"
 	
 	var startingText;
@@ -22,7 +32,7 @@ ChangePageText = new function() {
 ChangeImgSrc = new function() {
 	this.description = 'Now change the src for an image on the page'
 	this.hint = "right-click, inspect or inspect element",
-	this.location = "*"
+	this.location = ".*"
 	this.name = "ChangeImgSrc"
 	
 	var startingImgSrcs;
@@ -46,7 +56,7 @@ ChangeImgSrc = new function() {
 ChangeElementStyle = new function() {
 	this.description = 'Now change the style of an element on the page'
 	this.hint = "right-click, inspect or inspect element",
-	this.location = "*"
+	this.location = ".*"
 	this.name = "ChangeElementStyle"
 	
 	var starting;
@@ -105,7 +115,7 @@ AddTextToThePage = new function() {
 }
 
 FreeChangeAPage = new function() {
-	this.description = 'Great, now mess around some more on this page. In a few minutes we\'ll have everyone present the "new" version of their chosen site'
+	this.description = 'Great, now mess around some more on this page. In a few minutes you\'ll get a chance to show off your "new" version of this site'
 	this.location = ".*"
 	this.name = "FreeChangeAPage"
 

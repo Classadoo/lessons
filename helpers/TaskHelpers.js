@@ -36,4 +36,16 @@ module.exports = new function() {
 	this.hasChildWithText = function($el, text) {
 		return $el.find(":contains(" + text + ")").length > 0
 	}
+
+	this.tagWithId = function(els) {
+		return els.filter(function(i, el) {
+			return $(el).attr("id").length > 0
+		});			
+	}
+
+	this.nonEmptyTag = function(els) {
+		return els.filter(function(i, el) {
+			return $(el).text().length > 0
+		});			
+	}
 } 
