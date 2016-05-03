@@ -5,3 +5,7 @@
 .twitter-typeahead {
 	width: 100%;
 }
+
+.sync-scratch {
+	display: none;
+}

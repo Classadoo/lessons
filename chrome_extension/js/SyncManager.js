@@ -6,15 +6,15 @@ SyncManager = function(syncedState) {
 	function sync(e) {		
 		if (state.syncing) {
 			var index = Array.prototype.indexOf.call(document.getElementsByTagName("*"), e.target);
-			chrome.runtime.sendMessage({updateClass: {syncHighlight: index}})
+			syncedState.updateClass({syncHighlight: index})
 
 			overlays[index] = new TargetOverlay($(e.target));
 		}		
 	}
 
 	function trackClickCount() {				
-		Object.keys(syncedState.state).forEach(function(id) {			
-			var click = syncedState.state[id].state.global.backSyncClick			
+		Object.keys(syncedState.students).forEach(function(id) {			
+			var click = syncedState.students[id].state.global.backSyncClick			
 			if (click) {				
 				var overlay = overlays[click.index]
 				overlay && overlay.addClick(id);
@@ -22,7 +22,7 @@ SyncManager = function(syncedState) {
 		})
 	}
 
-	respond("stateSync", trackClickCount)
+	respond("studentsSync", trackClickCount)
 }
 
 TargetOverlay = function($el) {

@@ -13,7 +13,7 @@
     "update_url": "http://webtrails.co/chrome_extension_update.xml",
     "background": {
         "scripts": [
-            "third_party_js/jquery.js", "third_party_js/firebase.min.js", "js/ClassManager.js",
+            "third_party_js/jquery.js", "third_party_js/firebase.min.js", "js/background/ClassManager.js",
              "js/background/UrlResolver.js", "js/background/Requests.js",
             "js/background/main.js", "third_party_js/URI.js",
             "js/Util.js"
@@ -23,7 +23,8 @@
         {
             "matches": ["<all_urls>"],            
             "js": ["third_party_js/jquery.js", "third_party_js/typeahead.min.js", "js/IframeManager.js", "js/HtmlProcessor.js", 
-            "js/Util.js", "js/DefaultCss.js", "js/SyncedState.js", "js/Toolbar.js", "js/SyncManager.js", "js/State.js", "js/BindingUtils.js", "js/main.js"],
+            "js/Util.js", "js/DefaultCss.js", "js/SyncedState.js", "js/Toolbar.js", "js/SyncManager.js", "js/State.js", 
+            "js/ScratchpadSyncManager.js", "js/BindingUtils.js", "js/main.js"],
             "run_at": "document_start"
         }        
     ],

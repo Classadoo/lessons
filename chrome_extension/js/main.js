@@ -10,10 +10,16 @@ $(function() {
 	})
 	
 	chrome.runtime.sendMessage({getToolbar: true}, function(resp) {		
-		syncedState = new SyncedState(resp.startingState || {});
+		console.log("loading teacher toolbar");
+		syncedState = new SyncedState();		
 
-		new Toolbar($(document.body), resp.html, resp.open, resp.startingTask);		
 		new SyncManager(syncedState);
+		new ScratchpadSyncManager(syncedState);		
+		new Toolbar($(document.body), resp.html, resp.open, resp.startingTask, syncedState, function() {
+			syncedState.initialize(resp.startingStudents || {}, resp.startingClass || {});
+		});		
+		
+
 		chrome.runtime.sendMessage({getTaskNames: true});	
 	});		
 })

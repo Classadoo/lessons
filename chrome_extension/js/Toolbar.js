@@ -1,10 +1,11 @@
-Toolbar = function(parent, html, startsOpen, startingTask) {
+Toolbar = function(parent, html, startsOpen, startingTask, syncedState, onLoaded) {
 	console.log('start', startingTask);
 
 	var tasks = false;
 	var taskInput;
 	var latestTaskButton;
 	var syncButton;
+	var syncScratchButton;
 
 	var CSS = {
 		frame: {
@@ -33,26 +34,38 @@ Toolbar = function(parent, html, startsOpen, startingTask) {
 		taskInput = i.$(".task-typeahead .typeahead")
 		latestTaskButton = i.$(".latest-task-button")
 		syncButton = i.$(".sync-button")
+		syncScratchButton = i.$(".sync-scratch")
 
 		latestTaskButton.click(changeToLatestTask);
 		syncButton.click(function() {
-			if (state.syncing) {
+			if (synced) {
 				state.setSyncing(false);
 			} else {
 				state.setSyncing(true);
 			}			
 		})
+		
+		if (window.location.href.indexOf("scratchpad.io") > -1) {		
+			syncScratchButton.show();
+			syncScratchButton.click(function() {
+				console.log(syncedState);
+				syncedState.updateClass({"syncingScratch": !(syncedState.classState.syncingScratch)});
+			})
+		}
 
 		startingTask && taskInput.val(startingTask);		
 
 		typeahead = new Typeahead(taskInput)
 		tasks && typeahead.setTasks(tasks);
+		
+		onLoaded();
 	})	
 	
 
 	chrome.runtime.onMessage.addListener(
 	   	function(request, sender, sendResponse) {              
 	   		if((typeof request.toolbarOpen) === "boolean") {	   			
+	   			console.log("openeing or closign");
 	   			openOrClose(request.toolbarOpen)
 	   		}
 
@@ -80,8 +93,7 @@ Toolbar = function(parent, html, startsOpen, startingTask) {
 		});			
 	}
 
-	function updateSyncButton() {
-		console.log("asdfa", state.syncing)
+	function updateSyncButton() {		
 		if (state.syncing) {
 			syncButton.addClass("btn-danger");
 		} else {
@@ -89,9 +101,17 @@ Toolbar = function(parent, html, startsOpen, startingTask) {
 		}		
 	}
 
+	function updateSyncScratchButton() {
+		if (syncedState.classState.syncingScratch) {
+			syncScratchButton.addClass("btn-danger");
+		} else {
+			syncScratchButton.removeClass("btn-danger");
+		}		
+	}
 
    	openOrClose(startsOpen)
    	respond("syncing", updateSyncButton);
+   	respond("classSync", updateSyncScratchButton);	
 }
 
 Typeahead = function($el) {	

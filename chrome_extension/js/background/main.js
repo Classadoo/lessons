@@ -42,7 +42,7 @@ chrome.runtime.onMessage.addListener(
             		var $html = $(toolbarDoc);
 
 			    	addTagsToHead($html, [bootstrapCss, toolbarCss])
-			        sendResponse({html: toolbarDoc.outerHTML, open: toolbarOpen, startingTask: currentTask, startingState: m.getState});
+			        sendResponse({html: toolbarDoc.outerHTML, open: toolbarOpen, startingTask: currentTask, startingStudents: m.getStudents(), startingClass: m.getClass()});
 			    }
 			});
 
@@ -66,15 +66,16 @@ chrome.runtime.onMessage.addListener(
 );
 
 // chrome.browserAction.onClicked.addListener(toggleIdDisplay);
-chrome.browserAction.onClicked.addListener(function() {				
+chrome.browserAction.onClicked.addListener(function() {					
 	sendToCurrentTab({toolbarOpen: !toolbarOpen});				
 	toolbarOpen = !toolbarOpen;		
 });
 
 function sendToCurrentTab(message) {
 	chrome.tabs.query({active: true}, function(tabs) {		
-		var tabId = tabs[0].id
-		chrome.tabs.sendMessage(tabId, message);
+		tabs.forEach(function(tab) {
+			chrome.tabs.sendMessage(tab.id, message);	
+		})		
 	})
 }
 

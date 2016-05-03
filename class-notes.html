@@ -1,3 +1,9 @@
+http://scratchpad.io/male-island-5410
+
+https://en.wikipedia.org/wiki/Underdog_(TV_series)
+
+change the buton color
+
 <script>
   function change() {
     var on = true
@@ -17,3 +23,72 @@
 <button id="change-button" onclick="change()">
   Colors!
 </button>
+
+
+
+Full news site
+
+<script>
+  var images = [
+    "https://pbs.twimg.com/profile_images/636298564101111809/K8RXf5uN.jpg",
+    "https://i.kinja-img.com/gawker-media/image/upload/xqkbwkexcl7udc5va7pn.jpg",
+    "http://cdn1-www.dogtime.com/assets/uploads/2011/04/file_2153_column_popular-dog-names.jpg",
+    "http://youthvoices.net/sites/default/files/image/129678/dec/1600dog_11019_1.jpg"
+  ]
+
+  function cycleImage() {
+    var imageNumber = 0    
+    setInterval(function(){      
+      document.getElementById("img-title").src = images[imageNumber]
+      imageNumber = (imageNumber + 1) % images.length
+    }, 3000)    
+  }  
+  
+  cycleImage()
+</script>
+
+<style>
+  #title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;    
+  }
+  
+  #img-title {
+    width: 400px;
+    margin-top: 40px;
+  }
+  
+  #articles {    
+    width:100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #article-1 {
+    display: inline-block;    
+    width: 300px;
+  }
+  
+  #article-2 {
+    display: inline-block;  
+    width: 300px;    
+  }
+</style>
+
+<div id="title">
+  The News According to Dogs  
+  <div>
+    <img id="img-title" src="https://pbs.twimg.com/profile_images/636298564101111809/K8RXf5uN.jpg">
+  </div>  
+</div>
+
+<div id="articles">  
+  <div id="article-1">
+    In 1959, handling the General Mills account as an account executive with the Dancer Fitzgerald Sample advertising agency in New York, W. Watts Biggers teamed with Chet Stover, Treadwell D. Covington, and artist Joe Harris in the creation of television cartoon shows to sell breakfast cereals for General Mills. The shows introduced such characters as King Leonardo, Tennessee Tuxedo, and Underdog. Biggers and Stover contributed both scripts and songs to the series. When Underdog became a success, Biggers and his partners left Dancer Fitzgerald Sample to form their own company, Total Television, with animation produced at Gamma Studios in Mexico. In 1969, Total Television folded when General Mills dropped out as the primary sponsor (but continued to retain the rights to the series until 1995; however, they still own TV distribution rights through The Program Exchange).
+  </div>  
+
+  <div id="article-2">
+    The syndicated version of The Underdog Show consists of 62 half-hour episodes. The supporting segments differ from the show's original network run. The first 26 syndicated episodes feature Tennessee Tuxedo as a supporting segment (Tennessee Tuxedo originally aired as a separate show and also has its own syndicated adaptation). Thereafter, for most of the balance of the package, the middle segments include Go Go Gophers and Klondike Kat for three consecutive half-hours and Tennessee Tuxedo in the fourth. Commander McBragg is featured in the majority of episodes, replaced by three segments of The Sing-A-Long Family (in shows #1-2-3, #28-29-30, and #55-56-57). The final two syndicated Underdog half-hours feature one-shot cartoons originally part of an unsold pilot for a projected 1966 series, The Champion (Cauliflower Cabbie and Gene Hattree), with Commander McBragg appearing in show #61 and Go Go Gophers in show #62.
+  </div>  
+</div>
