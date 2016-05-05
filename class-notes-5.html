@@ -1,0 +1,63 @@
+news site full: http://scratchpad.io/relieved-feast-7721
+
+live demo: http://scratchpad.io/happy-wrist-5882
+
+Hidden words
+
+<style>
+  #hidden-word {
+    color: white;
+    display: none;
+  }
+  
+  #letter-1 {
+    position: absolute;
+  }
+  
+  #letter-2 {
+    position: absolute;  
+  }
+  
+  #letter-3 {
+    position: absolute;  
+  }
+</style>
+
+<div id="hidden-word">
+  Hidden Word
+</div>
+
+<div id="hidden-word">
+  Hidden Word
+</div>
+
+<div id="letter-1">
+  D
+</div>
+
+<div id="letter-2">
+  O
+</div>
+
+<div id="letter-3">
+  G
+</div>
+
+
+JS to check answer
+
+<script>
+  function checkAnswer(e) {
+    var answer = document.getElementById("answer")
+    console.log("what!", answer.value)
+    
+    if (answer.value == "DOG") {
+      document.getElementById("correct").style = "";
+    }
+  }    
+</script>
+<input id="answer" type="text" />
+<button id="answer-button" onclick="checkAnswer()">ANSWER</button>
+<div id="correct" style="display: none">
+  YOU WIN!
+</div>

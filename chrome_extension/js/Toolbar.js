@@ -176,18 +176,20 @@ Typeahead = function($el) {
 	}		
 }
 
+toolbarOpened = false;
 function ModifyPageForToolbar(openToolbar, $parent) {
 	var $parent = $parent || $(document)
 
 	var host = location.host;
-	if (openToolbar) 
+	if (openToolbar)  {
 		open();
-	else
+	} else if(toolbarOpened) {
 		close();
+	}
 	
 
 	function close() {
-		if (host == "scratchpad.io") {
+		if (host == "scratchpad.io" ||  location.pathname.indexOf("scratchpad.html") > -1)  {
 			$parent.find("#preview").css("top", "0px");
 			$parent.find("#commandbar").css("top", "0px");
 			$parent.find("#editor").css("top", "32px");
@@ -197,7 +199,7 @@ function ModifyPageForToolbar(openToolbar, $parent) {
 	}
 
 	function open() {
-		if (host == "scratchpad.io") {
+		if (host == "scratchpad.io" ||  path.indexOf("scratchpad.html") > -1) {
 			$parent.find("#preview").css("top", "38px");
 			$parent.find("#commandbar").css("top", "38px");
 			$parent.find("#editor").css("top", "70px");

@@ -1,26 +1,26 @@
 ClassManager = function() {
 	var self = this
-	// var studentsRef = new Firebase("classadoo-dev.firebaseIO.com/users");
-	// var classRef = new Firebase("classadoo-dev.firebaseIO.com/class");
+	var studentsRef = new Firebase("classadoo-dev.firebaseIO.com/users");
+	var classRef = new Firebase("classadoo-dev.firebaseIO.com/class");
 
-	var studentsRef = new Firebase("classadoo-prod.firebaseIO.com/users");
-	var classRef = new Firebase("classadoo-prod.firebaseIO.com/class");
+	// var studentsRef = new Firebase("classadoo-prod.firebaseIO.com/users");
+	// var classRef = new Firebase("classadoo-prod.firebaseIO.com/class");
 
 	var studentStates = {}
 	var classState = {};
 	
-	studentsRef.on("value", function(snap) {		
-		var newStudentStates = {}
-		Object.keys(snap.val() || {}).forEach(function(id) {
-			var student = snap.val()[id];
-			if (student.state && student.state.global) {
-				newStudentStates[id] = student
-			} 
-		})
+	// studentsRef.on("value", function(snap) {		
+	// 	var newStudentStates = {}
+	// 	Object.keys(snap.val() || {}).forEach(function(id) {
+	// 		var student = snap.val()[id];
+	// 		if (student.state && student.state.global) {
+	// 			newStudentStates[id] = student
+	// 		} 
+	// 	})
 
-		studentStates = newStudentStates			
-		sendToCurrentTab({studentStatesUpdate: newStudentStates});
-	})		
+	// 	studentStates = newStudentStates			
+	// 	sendToCurrentTab({studentStatesUpdate: newStudentStates});
+	// })		
 
 	classRef.on("value", function(snap) {		
 		classState = snap.val();
