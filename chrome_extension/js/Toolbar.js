@@ -199,7 +199,7 @@ function ModifyPageForToolbar(openToolbar, $parent) {
 	}
 
 	function open() {
-		if (host == "scratchpad.io" ||  path.indexOf("scratchpad.html") > -1) {
+		if (host == "scratchpad.io" ||  location.pathname.indexOf("scratchpad.html") > -1) {
 			$parent.find("#preview").css("top", "38px");
 			$parent.find("#commandbar").css("top", "38px");
 			$parent.find("#editor").css("top", "70px");

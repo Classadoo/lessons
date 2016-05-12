@@ -1,10 +1,10 @@
 ClassManager = function() {
 	var self = this
-	var studentsRef = new Firebase("classadoo-dev.firebaseIO.com/users");
-	var classRef = new Firebase("classadoo-dev.firebaseIO.com/class");
+	// var studentsRef = new Firebase("classadoo-dev.firebaseIO.com/users");
+	// var classRef = new Firebase("classadoo-dev.firebaseIO.com/class");
 
-	// var studentsRef = new Firebase("classadoo-prod.firebaseIO.com/users");
-	// var classRef = new Firebase("classadoo-prod.firebaseIO.com/class");
+	var studentsRef = new Firebase("classadoo-prod.firebaseIO.com/users");
+	var classRef = new Firebase("classadoo-prod.firebaseIO.com/class");
 
 	var studentStates = {}
 	var classState = {};

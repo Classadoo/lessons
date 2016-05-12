@@ -1,5 +1,5 @@
 require("../tasks/PuzzleSite.js");
 
 __importedLesson = [
-	Challenge1
+	// Challenge1
 ]
