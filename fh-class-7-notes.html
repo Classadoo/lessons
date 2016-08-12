@@ -1,0 +1,94 @@
+<script>
+  function findGif() {
+    var searchQuery = $("#search-box").val().split("\s").join("+");
+    console.log("searing", searchQuery)
+
+    $.ajax({
+      method: "GET",
+      url: "https://api.giphy.com/v1/gifs/search?q=" + searchQuery + "&api_key=dc6zaTOxFJmzC",
+      success: function(res) {
+        console.log("res", res);
+        $("#search-result").attr("src", res.data[0].images.fixed_height.url);
+      }
+    })  
+  }
+</script>
+
+<style>
+  #title {
+    color: red;
+  }  
+  
+  #cool-img {
+    height: 400px;
+    border-image: linear-gradient(red, blue) 1;
+  }
+  
+  #search-box-wrapper {
+    text-align: center;
+  }
+</style>
+
+<div id="title" style="text-align: center; margin-bottom: 100px">
+  The Coolest News Around
+</div>
+
+<div id="search-box-wrapper">
+  <input id="search-box" /><button onclick="findGif()">Find Gif</button>
+</div>
+
+<div style="text-align:center">
+  <img id="search-result">  
+</div>
+
+
+<style>
+  #title {
+    text-align: center;
+    color: ?;
+    border: ?;
+    background: ?;
+    text-decoration: underline
+  }
+  
+  #input-wrapper {
+    text-align: center;
+  }
+  
+  body {
+    background: linear-gradient();
+    border-image: linear-gradient(red, blue) 1;
+  }
+</style>
+
+<script>
+  function findGif() {
+    var searchQuery = $("#search-box").val().split("\s").join("+");
+    console.log("searing", searchQuery)
+
+    $.ajax({
+      method: "GET",
+      url: "https://api.giphy.com/v1/gifs/search?q=" + searchQuery + "&api_key=dc6zaTOxFJmzC",
+      success: function(res) {
+        console.log("res", res);
+        $("#search-result").attr("src", res.data[0].images.fixed_height.url);
+      }
+    })  
+  }
+</script>
+
+<h2 id="title">
+  GIFS Galore
+</h2>
+
+
+<div id="input-wrapper">
+  <h3>
+    Search
+  </h3>
+  <input id="search-box" /> <button onclick="findGif()">Find Gif</button>
+  <div>
+    <img id="search-result">  
+  </div>
+</div>
+
